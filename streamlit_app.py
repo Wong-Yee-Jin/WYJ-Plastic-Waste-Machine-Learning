@@ -17,11 +17,11 @@ with st.expander('Raw Data'):
 st.write('Describe the independent and dependent variables...')
 
 with st.expander('Independent Variables'):
-  X = df.loc(independent_variables)
+  X = df[independent_variables]
   # X = df.drop(dependent_variable, axis=1)
   X
 
 with st.expander('Dependent Variable'):
-  y = df.loc(dependent_variable)
+  y = df[dependent_variable]
   # y = df.drop(independent_variables, axis=1)
   y
