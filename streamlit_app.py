@@ -81,4 +81,4 @@ output_predict: np.ndarray = predict_linreg(input_df, model['beta'], model['mean
 
 st.header('Predicted Volume of Plastic Waste Disposed in Singapore')
 st.table(output_df)
-st.success(f'Predicted Plastic Waste Disposed in Singapore: {output_predict[0][0]:.0f}')
+st.success(f'Predicted Plastic Waste Disposed in Singapore: {round(output_predict[0][0])}')
