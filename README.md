@@ -1,13 +1,11 @@
-# 📦 Streamlit App Starter Kit 
-```
-⬆️ (Replace above with your app's name)
-```
+# ♻ Singapore Plastic Waste Disposed Machine Learning
 
-Description of the app ...
+This is a machine learning app using a supervised learning  model (Multiple Linear Regression).
+Problem Statement: How might we predict the annual volume of plastic waste disposed in Singapore based on population size and GDP per capita to aid the Singapore Government's decision-making to promote sustainable growth and effective waste management?
 
 ## Demo App
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://app-starter-kit.streamlit.app/)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://WYJ-Plastic-Waste-Machine-Learning.streamlit.app/)
 
 ## GitHub Codespaces
 
