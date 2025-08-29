@@ -68,24 +68,17 @@ pred: np.ndarray = predict_linreg(df_features_test, model['beta'], model['means'
 
 # EVALUATE LINEAR REGRESSION MODEL
 target: np.ndarray = df_target_test.to_numpy()
-# r2: float = r2_score(target, pred)
 mse: float = mean_squared_error(target, pred)
 rmse = np.sqrt(mse)
 abs_errors = np.abs(target - pred)
 mean_abs_error = np.mean(abs_errors)
 output_df = {'Mean Squared Error': f'{mse:.4f}', 'Root Mean Squared Error': f'{rmse:.4f}', 'Mean Absolute Error': f'{mean_abs_error:.2f}'}
-# print(f"R² Score: {r2:.4f}")
-# print(f"MSE: {mse:.4f} tonnes²")
-# print(f"RMSE: {rmse:.4f} tonnes")
-# print(f"MAE: {mean_abs_error:.2f} tonnes")
 
 
 # PREDICT USING INPUT FEATURES FROM USER
-# user_array_features,_,_ = normalize_z(input_df.to_numpy())
-# user_X: np.ndarray = prepare_feature(user_array_features)
 output_predict: np.ndarray = predict_linreg(input_df, model['beta'], model['means'], model['stds'])
 
 
 st.header('Predicted Volume of Plastic Waste Disposed in Singapore')
-output_df
+st.table(output_df)
 st.success(f'Predicted Plastic Waste Disposed in Singapore: {output_predict}')
