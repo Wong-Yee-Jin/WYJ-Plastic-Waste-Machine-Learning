@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 independent_variables = ['Year', 'Total SG Population', 'SG GDP Per Capita']
-dependent_variable = ['Plastic Waste Disposed (Tonnes)']
+dependent_variable = 'Plastic Waste Disposed (Tonnes)'
 
 st.set_page_config(layout="wide")
 st.title('♻ Singapore Plastic Waste Disposed Machine Learning')
@@ -17,7 +17,7 @@ with st.expander('Raw Data'):
 st.write('Describe the independent and dependent variables...')
 
 with st.expander('Independent Variables'):
-  X = df.drop(dependent_variable)
+  X = df.drop(dependent_variable, axis=1)
   X
 
 with st.expander('Dependent Variable'):
