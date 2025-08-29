@@ -6,7 +6,7 @@ dependent_variable = ['Plastic Waste Disposed (Tonnes)']
 
 st.set_page_config(layout="wide")
 st.title('♻ Singapore Plastic Waste Disposed Machine Learning')
-st.info("Problem Statement: Using a supervised learning model (Multiple Linear Regression), how might we predict the annual volume of plastic waste disposed in Singapore based on population size and GDP per capita to aid the Singapore Government's decision-making to promote sustainable growth and effective waste management?")
+st.info("Problem Statement: using a **supervised learning model** (Multiple Linear Regression), how might we **predict the annual volume of plastic waste disposed in Singapore** based on population size and GDP per capita to aid the Singapore Government's decision-making to promote sustainable growth and effective waste management?")
 st.write('Describe how the data is obtained...')
 
 with st.expander('Raw Data'):
