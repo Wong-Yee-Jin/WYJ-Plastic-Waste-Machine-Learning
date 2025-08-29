@@ -5,5 +5,6 @@ st.title('♻ Singapore Plastic Waste Disposed Machine Learning')
 
 st.info('This is a machine learning model.')
 
-df = pd.read_csv('SG_Plastic_Waste_GDP_Population_Dataset.csv')
-df
+with st.expander('**Raw Data'):
+  df = pd.read_csv('SG_Plastic_Waste_GDP_Population_Dataset.csv')
+  df
