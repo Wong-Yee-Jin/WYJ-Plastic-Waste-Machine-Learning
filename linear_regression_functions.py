@@ -3,6 +3,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.axes as axes
 import seaborn as sns
+from typing import TypeAlias
+from typing import Optional, Any
+Number: TypeAlias = int | float
 
 # --PREPARE THE FEATURES & TARGET SETS--
 
