@@ -21,5 +21,5 @@ with st.expander('Independent Variables'):
   X
 
 with st.expander('Dependent Variable'):
-  y = df.drop(columns=independent_variables)
+  y = df.drop(independent_variables, axis=1)
   y
