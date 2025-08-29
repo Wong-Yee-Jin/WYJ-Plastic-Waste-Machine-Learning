@@ -72,7 +72,7 @@ mse: float = mean_squared_error(target, pred)
 rmse = np.sqrt(mse)
 abs_errors = np.abs(target - pred)
 mean_abs_error = np.mean(abs_errors)
-output_df = {'Mean Squared Error': f'{mse:.4f}', 'Root Mean Squared Error': f'{rmse:.4f}', 'Mean Absolute Error': f'{mean_abs_error:.2f}'}
+output_df = {'Mean Squared Error': f'{mse:.4f}', 'Root Mean Squared Error': f'{rmse:.4f}', 'Mean Absolute Error': f'{mean_abs_error:.4f}'}
 
 
 # PREDICT USING INPUT FEATURES FROM USER
@@ -81,4 +81,4 @@ output_predict: np.ndarray = predict_linreg(input_df, model['beta'], model['mean
 
 st.header('Predicted Volume of Plastic Waste Disposed in Singapore')
 st.table(output_df)
-st.success(f'Predicted Plastic Waste Disposed in Singapore: {output_predict[0][0]:.4f}')
+st.success(f'Predicted Plastic Waste Disposed in Singapore: {output_predict[0][0]:.0f}')
