@@ -12,9 +12,11 @@ st.info("Problem Statement: using a **supervised learning model** (Multiple Line
 
 # DATA EXTRACTION
 st.write('Describe how the data is obtained...')
-with st.expander('Raw Data'):
-  df = pd.read_csv('SG_Plastic_Waste_GDP_Population_Dataset.csv')
-  df
+df = pd.read_csv('SG_Plastic_Waste_GDP_Population_Dataset.csv')
+df
+# with st.expander('Raw Data'):
+#   df = pd.read_csv('SG_Plastic_Waste_GDP_Population_Dataset.csv')
+#   df
 
 
 # DATA VISUALIZATION
