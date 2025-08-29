@@ -25,4 +25,7 @@ with st.expander('Dependent Variable'):
   y
 
 with st.expander('Data Visualization'):
-  st.bar_chart(data=df, x='Year', y=independent_variables, color=dependent_variable)
+  st.write('**Total SG Population**')
+  st.bar_chart(data=df, x='Year', y=independent_variables[0], color=dependent_variable[0])
+  st.write('**SD GDP Per Capita**')
+  st.bar_chart(data=df, x='Year', y=independent_variables[1], color=dependent_variable[0])
