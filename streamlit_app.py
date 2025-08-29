@@ -37,3 +37,9 @@ with st.sidebar:
   st.header('Input Features')
   sg_population = st.slider('Singapore Population', 3000000, 1000000000, 5000000)
   sg_gdp = st.slider('Singapore GDP Per Capita', 30000, 1000000000, 500000)
+  input_data = {'Total SG Population': sg_population, 'SG GDP Per Capita': sg_gdp}
+  input_df = pd.DataFrame(input_data, index[0])
+
+
+st.write('You have selected the following input features')
+input_df
