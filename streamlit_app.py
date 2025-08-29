@@ -18,10 +18,11 @@ st.write('Describe the independent and dependent variables...')
 
 with st.expander('Independent Variables'):
   X = df[independent_variables]
-  # X = df.drop(dependent_variable, axis=1)
   X
 
 with st.expander('Dependent Variable'):
   y = df[dependent_variable]
-  # y = df.drop(independent_variables, axis=1)
   y
+
+with st.expander('Data Visualization'):
+  st.bar_chart(data=df, x='Year', y=independent_variables, color=dependent_variable)
