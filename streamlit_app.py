@@ -81,9 +81,9 @@ output_df = {'Mean Squared Error': f'{mse:.4f}', 'Root Mean Squared Error': f'{r
 
 
 # PREDICT USING INPUT FEATURES FROM USER
-user_array_features,_,_ = normalize_z(input_df.to_numpy())
-user_X: np.ndarray = prepare_feature(user_array_features)
-output_predict: np.ndarray = predict_linreg(pd.DataFrame(user_X), model['beta'], model['means'], model['stds'])
+# user_array_features,_,_ = normalize_z(input_df.to_numpy())
+# user_X: np.ndarray = prepare_feature(user_array_features)
+output_predict: np.ndarray = predict_linreg(input_df, model['beta'], model['means'], model['stds'])
 
 
 st.header('Predicted Volume of Plastic Waste Disposed in Singapore')
