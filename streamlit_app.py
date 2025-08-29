@@ -32,3 +32,8 @@ with st.expander('Data Visualization'):
   st.bar_chart(data=df, x='Year', y=independent_variables[1], color=dependent_variable[0])
 
 
+# DATA PREPARATION
+with st.sidebar:
+  st.header('Input Features')
+  sg_population = st.slider('Singapore Population', 3000000, 1000000000, 5000000)
+  sg_gdp = st.slider('Singapore GDP Per Capita', 30000, 1000000000, 500000)
