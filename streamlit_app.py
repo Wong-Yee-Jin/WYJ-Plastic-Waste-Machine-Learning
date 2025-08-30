@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from linear_regression_functions import get_features_targets, split_data, normalize_z, prepare_feature, calc_linreg, compute_cost_linreg, gradient_descent_linreg, predict_linreg, build_model_linreg, r2_score, mean_squared_error
-from st_copy import copy_button
 
 
 independent_variables = ['Total SG Population', 'SG GDP Per Capita']
