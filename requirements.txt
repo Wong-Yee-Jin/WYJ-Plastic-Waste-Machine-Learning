@@ -4,3 +4,4 @@ pandas
 matplotlib
 seaborn
 typing
+st_copy
