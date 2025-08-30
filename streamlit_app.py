@@ -68,7 +68,7 @@ with st.sidebar:
 
 
 # PREPARE FEATURES & TARGET SETS
-df[dependent_variable[0]] = np.log(df[dependent_variable[0]]) # logarithm y variable
+# df[dependent_variable[0]] = np.log(df[dependent_variable[0]]) # logarithm y variable
 df_features, df_target = get_features_targets(df, independent_variables, dependent_variable)
 df_features_train, df_features_test, df_target_train, df_target_test = split_data(df_features, df_target, 100, 0.2)
 array_features,_,_ = normalize_z(df_features.to_numpy())
