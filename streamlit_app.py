@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from linear_regression_functions import get_features_targets, split_data, normalize_z, prepare_feature, calc_linreg, compute_cost_linreg, gradient_descent_linreg, predict_linreg, build_model_linreg, r2_score, mean_squared_error
+from st_copy import copy_button
 
 
 independent_variables = ['Total SG Population', 'SG GDP Per Capita']
@@ -16,6 +17,7 @@ st.info("Problem Statement: using **supervised learning** (Multiple Linear Regre
 # DATA EXTRACTION
 st.header('Data Extraction')
 st.write('Describe how the data is obtained...')
+st.info('Reference List of datasets used\nSingapore Department of Statistics. (2024). Waste Management And Overall Recycling Rates, Annual (2025) [Dataset]. data.gov.sg. Retrieved August 30, 2025 from https://data.gov.sg/datasets/d_daf568968ab40dc81e7b08887a83c8fa/view')
 df = pd.read_csv('SG_Plastic_Waste_GDP_Population_Dataset.csv')
 df
 
