@@ -14,6 +14,7 @@ st.info("Problem Statement: using **supervised learning** (Multiple Linear Regre
 
 
 # DATA EXTRACTION
+st.header('Data Extraction')
 st.write('Describe how the data is obtained...')
 df = pd.read_csv('SG_Plastic_Waste_GDP_Population_Dataset.csv')
 df
