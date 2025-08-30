@@ -21,17 +21,24 @@ df
 
 # DATA VISUALIZATION
 st.write('Describe the independent and dependent variables...')
-with st.expander('Independent Variables'):
-  X = df[independent_variables]
-  X
-with st.expander('Dependent Variable'):
-  y = df[dependent_variable]
-  y
-with st.expander('Data Visualization'):
-  st.write('**Total SG Population**')
+col1, col2 = st.columns(2)
+with col1:
+  st.header('**Total Population**')
   st.bar_chart(data=df, x='Year', y=independent_variables[0], color=dependent_variable[0])
-  st.write('**SD GDP Per Capita**')
+with col2:
+  st.header('**GDP Per Capita**')
   st.bar_chart(data=df, x='Year', y=independent_variables[1], color=dependent_variable[0])
+# with st.expander('Independent Variables'):
+#   X = df[independent_variables]
+#   X
+# with st.expander('Dependent Variable'):
+#   y = df[dependent_variable]
+#   y
+# with st.expander('Data Visualization'):
+#   st.write('**Total SG Population**')
+#   st.bar_chart(data=df, x='Year', y=independent_variables[0], color=dependent_variable[0])
+#   st.write('**SD GDP Per Capita**')
+#   st.bar_chart(data=df, x='Year', y=independent_variables[1], color=dependent_variable[0])
 
 
 # DATA PREPARATION
