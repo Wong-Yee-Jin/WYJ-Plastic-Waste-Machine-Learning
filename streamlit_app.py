@@ -143,22 +143,23 @@ st.info(citation_links[3])
 # with col4:
 #     copy_button('Link 1', icon='st', tooltip='Copy citation', copied_label='Copied!', key='cite_link1')
 
-css = """
-<style>
-.st-key-my-blue-container {
-    background-color: lightblue;
-    border-radius: 10px;
-    padding: 20px;
-}
-</style>
-"""
+# css = """
+# <style>
+# .st-key-my-blue-container {
+#     background-color: lightblue;
+#     border-radius: 10px;
+#     padding: 20px;
+# }
+# </style>
+# """
 
-# Inject the CSS into the Streamlit app
-st.markdown(css, unsafe_allow_html=True)
+# # Inject the CSS into the Streamlit app
+# st.markdown(css, unsafe_allow_html=True)
 
-# Create the container with the specified key
-with st.container(key="my_blue_container"):
-    st.write("This container has a light blue background!")
-    st.button("Click me")
+# # Create the container with the specified key
+# with st.container(key="my_blue_container"):
+#     st.write("This container has a light blue background!")
+#     st.button("Click me")
 
-st.write("This is outside the colored container.")
+# st.write("This is outside the colored container.")
+st.code(citation_links[0])
