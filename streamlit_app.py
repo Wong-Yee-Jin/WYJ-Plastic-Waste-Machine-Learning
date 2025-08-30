@@ -7,6 +7,10 @@ from st_copy import copy_button
 
 independent_variables = ['Total SG Population', 'SG GDP Per Capita']
 dependent_variable = ['Plastic Waste Disposed (Tonnes)']
+citation_links = ['Singapore Department of Statistics. (2024). Waste Management And Overall Recycling Rates, Annual (2025) [Dataset]. data.gov.sg. Retrieved from https://data.gov.sg/datasets/d_daf568968ab40dc81e7b08887a83c8fa/view',
+                 'Singapore Department of Statistics. (2024). Per Capita GDP In Chained (2015) Dollars, Annual (2025) [Dataset]. data.gov.sg. Retrieved from https://data.gov.sg/datasets/d_c43f61819c32009f2e86c29b0550e7fc/view',
+                 'Singapore Department of Statistics. (2023). Indicators On Population, Annual (2025) [Dataset]. data.gov.sg. Retrieved from https://data.gov.sg/datasets/d_3d227e5d9fdec73f3bcadce671c333a6/view',
+                 'Envcares. (2025). Plastics wastes in Singapore. https://envcares.com.sg/plastics-wastes-in-singapore/']
 
 
 st.set_page_config(layout="wide")
@@ -17,8 +21,8 @@ st.info("Problem Statement: using **supervised learning** (Multiple Linear Regre
 # DATA EXTRACTION
 st.header('Data Extraction')
 st.write('Describe how the data is obtained...')
-db_citations = '**Dataset Reference List**  \n  \nSingapore Department of Statistics. (2024). Waste Management And Overall Recycling Rates, Annual (2025) [Dataset]. data.gov.sg. Retrieved from https://data.gov.sg/datasets/d_daf568968ab40dc81e7b08887a83c8fa/view  \n  \nSingapore Department of Statistics. (2024). Per Capita GDP In Chained (2015) Dollars, Annual (2025) [Dataset]. data.gov.sg. Retrieved August 30, 2025 from https://data.gov.sg/datasets/d_c43f61819c32009f2e86c29b0550e7fc/view  \n  \nSingapore Department of Statistics. (2023). Indicators On Population, Annual (2025) [Dataset]. data.gov.sg. Retrieved August 30, 2025 from https://data.gov.sg/datasets/d_3d227e5d9fdec73f3bcadce671c333a6/view  \n  \nEnvcares. (2025). Plastics wastes in Singapore. https://envcares.com.sg/plastics-wastes-in-singapore/'
-st.info(db_citations)
+# db_citations = '**Dataset Reference List**  \n  \nSingapore Department of Statistics. (2024). Waste Management And Overall Recycling Rates, Annual (2025) [Dataset]. data.gov.sg. Retrieved from https://data.gov.sg/datasets/d_daf568968ab40dc81e7b08887a83c8fa/view  \n  \nSingapore Department of Statistics. (2024). Per Capita GDP In Chained (2015) Dollars, Annual (2025) [Dataset]. data.gov.sg. Retrieved August 30, 2025 from https://data.gov.sg/datasets/d_c43f61819c32009f2e86c29b0550e7fc/view  \n  \nSingapore Department of Statistics. (2023). Indicators On Population, Annual (2025) [Dataset]. data.gov.sg. Retrieved August 30, 2025 from https://data.gov.sg/datasets/d_3d227e5d9fdec73f3bcadce671c333a6/view  \n  \nEnvcares. (2025). Plastics wastes in Singapore. https://envcares.com.sg/plastics-wastes-in-singapore/'
+# st.info(db_citations)
 df = pd.read_csv('SG_Plastic_Waste_GDP_Population_Dataset.csv')
 df
 
@@ -98,10 +102,28 @@ st.table(output_df)
 st.success(f'Prediction: {round(output_predict[0][0]):,} tonnes')
 
 
-copy_button(
-    'Link 1',
-    icon='st',  # default, use 'st' as alternative
-    tooltip='Copy citation',  # defaults to 'Copy'
-    copied_label='Copied!',  # defaults to 'Copied!'
-    key='cite_link1',  # If omitted, a random key will be generated
-)
+st.header('Dataset Reference List')
+st.info(citation_links[0])
+st.info(citation_links[1])
+st.info(citation_links[2])
+st.info(citation_links[3])
+
+
+# copy_button(
+#     'Link 1',
+#     icon='st',  # default, use 'st' as alternative
+#     tooltip='Copy citation',  # defaults to 'Copy'
+#     copied_label='Copied!',  # defaults to 'Copied!'
+#     key='cite_link1',  # If omitted, a random key will be generated
+# )
+with st.container(border=True):
+        st.info("This is an important message.")
+        copy_button(
+          'Link 1',
+          icon='st',  # default, use 'st' as alternative
+          tooltip='Copy citation',  # defaults to 'Copy'
+          copied_label='Copied!',  # defaults to 'Copied!'
+          key='cite_link1',  # If omitted, a random key will be generated
+        )
+        # if st.button("Perform Action"):
+        #     st.write("Action performed!")
