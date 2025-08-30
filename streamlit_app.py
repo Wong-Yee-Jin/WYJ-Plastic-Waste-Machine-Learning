@@ -17,7 +17,7 @@ st.info("Problem Statement: using **supervised learning** (Multiple Linear Regre
 # DATA EXTRACTION
 st.header('Data Extraction')
 st.write('Describe how the data is obtained...')
-db_citations = 'Reference List of datasets used\nSingapore Department of Statistics. (2024). Waste Management And Overall Recycling Rates, Annual (2025) [Dataset]. data.gov.sg. Retrieved August 30, 2025 from https://data.gov.sg/datasets/d_daf568968ab40dc81e7b08887a83c8fa/view'
+db_citations = 'Reference List of datasets used  \nSingapore Department of Statistics. (2024). Waste Management And Overall Recycling Rates, Annual (2025) [Dataset]. data.gov.sg. Retrieved August 30, 2025 from https://data.gov.sg/datasets/d_daf568968ab40dc81e7b08887a83c8fa/view'
 st.info(db_citations)
 df = pd.read_csv('SG_Plastic_Waste_GDP_Population_Dataset.csv')
 df
