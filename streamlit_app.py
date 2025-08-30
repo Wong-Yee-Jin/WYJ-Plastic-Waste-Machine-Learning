@@ -40,15 +40,16 @@ df
 st.header('Independent and Dependent Variables')
 st.write('Inferring from the problem statement, the dependent variable is "Plastic Waste Disposed in Singapore". As for the independent variables,')
 col1, col2 = st.columns(2)
+col3, col4 = st.columns(2)
 with col1:
-  # st.header('**Total SG Population**')
   st.write('**Total SG Population**')
   st.write('It shows how the total population size changes from 1950 to 2024. We expect that when the population size increases, the total amount of consumer goods consumed in Singapore increases. Given that, the volume of plastic consumption and consequently plastic waste disposed should increase as well.')
-  st.bar_chart(data=df, x='Year', y=independent_variables[0], color=dependent_variable[0])
 with col2:
-  # st.header('**SG GDP Per Capita**')
   st.write('**SG GDP Per Capita**')
   st.write("It shows Singapore's average economic output per person, adjusted for inflation to 2015 prices in SGD, as an indicator of yearly economic performance from 1960 to 2024. As GDP per capita rises, economic growth is expected, boosting consumer wealth and spending on goods. Hence, we expect the volume of plastic consumption and consequently plastic waste disposed to increase.")
+with col3:
+  st.bar_chart(data=df, x='Year', y=independent_variables[0], color=dependent_variable[0])
+with col4:
   st.bar_chart(data=df, x='Year', y=independent_variables[1], color=dependent_variable[0])
 
 
