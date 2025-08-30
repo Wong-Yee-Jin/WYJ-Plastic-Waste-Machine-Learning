@@ -90,7 +90,7 @@ st.write('You have selected the following population and GDP per capita in Singa
 input_display
 st.write('TODO: Describe the MSE, RMSE, and MAE, as well as why we chose these to evaluate the model...')
 st.table(output_df)
-st.success(f'Prediction: {round(output_predict[0][0]):,} tonnes')
+st.success(f'Prediction: **{round(output_predict[0][0]):,} tonnes**')
 
 
 st.header('Dataset Reference List')
