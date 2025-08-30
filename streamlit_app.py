@@ -108,7 +108,15 @@ st.info(citation_links[1])
 st.info(citation_links[2])
 st.info(citation_links[3])
 
-
+with st.info:
+  st.write('Citation link')
+  copy_button(
+    'Link 1',
+    icon='st',  # default, use 'st' as alternative
+    tooltip='Copy citation',  # defaults to 'Copy'
+    copied_label='Copied!',  # defaults to 'Copied!'
+    key='cite_link1',  # If omitted, a random key will be generated
+  )
 # copy_button(
 #     'Link 1',
 #     icon='st',  # default, use 'st' as alternative
