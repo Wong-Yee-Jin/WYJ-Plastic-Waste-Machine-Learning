@@ -19,22 +19,36 @@ st.info("Problem Statement: using **supervised learning** (Multiple Linear Regre
 
 # DATA EXTRACTION
 st.header('Data Extraction')
-st.write('TODO: Describe how the data is obtained...')
+st.write('Three datasets have been considered for this machine learning project.')
+with st.container(border=True):
+  st.write('**1. Waste Management and Overall Recycling Rates Annual**')
+  st.write('This dataset details the annual volume of waste generated, disposed and recycled in tonnes, with the waste generated being the sum of waste disposed and waste recycled.')
+  st.write('From 1996 to 1999, the data was obtained from Envcares which includes a screenshot of the plastic waste statistics from the National Environment Agency (NEA) in Singapore. From 2000 to 2024, the data was obtained from the Singapore Department of Statistics, specifically the material "Plastic" under the category "Total Disposed".')
+with st.container(border=True):
+  st.write('**2. Per Capita GDP In Chained 2015 Dollars Annual**')
+  st.write('This dataset details the annual GDP per capita and manufacturing GDP per capita in chained dollars as well as the year on year growth rates, from 1960 to 2024.')
+  st.write('Aligning with the years found in the first dataset, the data in the column "Per Capita GDP in Chained (2015) Dollars" from 1996 to 2024 was selected.')
+with st.container(border=True):
+  st.write('**3. Indicators On Population Annual**')
+  st.write("This dataset details the various characteristics of the country's population such as total population size and its breakdown by type of citizenship as well as population growth rate and density and gender ratio, from 1950 to 2024.")
+  st.write('Aligning with the years found in the first dataset, the data in the column "Total Population" from 1996 to 2024 was selected.')
 df = pd.read_csv('SG_Plastic_Waste_GDP_Population_Dataset.csv')
 df
 
 
 # DATA VISUALIZATION
 st.header('Independent and Dependent Variables')
-st.write('TODO: Describe the independent and dependent variables used...')
+st.write('Inferring from the problem statement, the dependent variable is "Plastic Waste Disposed in Singapore". As for the independent variables,')
 col1, col2 = st.columns(2)
 with col1:
   # st.header('**Total SG Population**')
-  st.write('**Total SG Population against Year**')
+  st.write('**Total SG Population**')
+  st.write('It shows how the total population size changes from 1950 to 2024. We expect that when the population size increases, the total amount of consumer goods consumed in Singapore increases. Given that, the volume of plastic consumption and consequently plastic waste disposed should increase as well.')
   st.bar_chart(data=df, x='Year', y=independent_variables[0], color=dependent_variable[0])
 with col2:
   # st.header('**SG GDP Per Capita**')
-  st.write('**SG GDP Per Capita against Year**')
+  st.write('**SG GDP Per Capita**')
+  st.write("It shows the average economic output per person, adjusted for inflation using 2015 prices, and expressed in SGD, serving as an indicator of Singapore's yearly economic performance from 1960 to 2024. We expect that when the GDP per capita increases, Singapore is experiencing economic growth. Consumer wealth is expected to increase, allowing for increased expenditure on consumer goods. Plastics are heavily used in the production of many consumer goods. Hence, we expect the volume of plastic consumption and consequently plastic waste disposed to increase.")
   st.bar_chart(data=df, x='Year', y=independent_variables[1], color=dependent_variable[0])
 
 
@@ -88,9 +102,16 @@ output_predict: np.ndarray = predict_linreg(input_df, model['beta'], model['mean
 st.header('Predict the Volume of Plastic Waste Disposed in Singapore')
 st.write('You have selected the following population and GDP per capita in Singapore:')
 input_display
-st.write('TODO: Describe the MSE, RMSE, and MAE, as well as why we chose these to evaluate the model...')
+st.write('Root Mean Squared Error (RMSE) represents the average magnitude of the error between the predicted and actual values, with greater weight given to larger errors. In the context of national-level policy, such a margin of error is considered acceptable due to the scale of the data involved.')
+st.write('Mean Absolute Error (MAE) reflects the average absolute difference between predicted and actual values. An error of around 40,000 tonnes indicates that the model produces reasonably close estimates across the dataset.')
 st.table(output_df)
 st.success(f'Prediction: **{round(output_predict[0][0]):,} tonnes**')
+
+
+st.header('Discussion and Analysis of Results')
+st.write('Our objective was to predict Singapore’s future plastic waste generation, addressing critical issues such as land scarcity and rising consumption. Using machine learning allowed us to:')
+st.html('<ul><li>Quantify the relationship between macroeconomic indicators (GDP and population) and waste generation trends.</li><li>Forecast future plastic waste levels, even with incomplete historical data, by training a regression model and applying interpolation.</li><li>Support policy with evidence-based projections, aiding long-term planning and infrastructure decisions related to waste management</li>')
+st.write('By evaluating the model using RMSE and MAE, we demonstrate that its predictions are sufficiently accurate to support key decisions on infrastructure, recycling capacity, and sustainability policy. While there is room for refinement, such as incorporating more variables or higher-resolution data—the current model already provides a meaningful, data-driven foundation for sustainable waste management planning.')
 
 
 st.header('Dataset Reference List')
