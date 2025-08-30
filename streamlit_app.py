@@ -50,7 +50,7 @@ with st.sidebar:
   input_df = pd.DataFrame(input_data, index=[0])
 
 
-st.write('You have selected the following input features')
+st.header('Selected Input Features')
 input_df
 
 
@@ -79,7 +79,8 @@ mse: float = mean_squared_error(target, pred)
 rmse = np.sqrt(mse)
 abs_errors = np.abs(target - pred)
 mean_abs_error = np.mean(abs_errors)
-output_df = {'Mean Squared Error': f'{mse:.4f}', 'Root Mean Squared Error': f'{rmse:.4f}', 'Mean Absolute Error': f'{mean_abs_error:.4f}'}
+output_data = {'Mean Squared Error (MSE)': f'{mse:.4f}', 'Root Mean Squared Error (RMSE)': f'{rmse:.4f}', 'Mean Absolute Error (MAE)': f'{mean_abs_error:.4f}'}
+output_df = pd.DataFrame(output_data, index=[0])
 
 
 # PREDICT USING INPUT FEATURES FROM USER
@@ -87,5 +88,6 @@ output_predict: np.ndarray = predict_linreg(input_df, model['beta'], model['mean
 
 
 st.header('Predicted Volume of Plastic Waste Disposed in Singapore')
+st.write('Describe the MSE, RMSE, and MAE, as well as why we chose these to evaluate the model...')
 st.table(output_df)
-st.success(f'Predicted Plastic Waste Disposed in Singapore: {round(output_predict[0][0])}')
+st.success(f'Prediction: {round(output_predict[0][0])}')
