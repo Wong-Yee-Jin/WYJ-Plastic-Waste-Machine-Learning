@@ -19,33 +19,22 @@ st.info("Problem Statement: using **supervised learning** (Multiple Linear Regre
 
 # DATA EXTRACTION
 st.header('Data Extraction')
-st.write('Describe how the data is obtained...')
-# db_citations = '**Dataset Reference List**  \n  \nSingapore Department of Statistics. (2024). Waste Management And Overall Recycling Rates, Annual (2025) [Dataset]. data.gov.sg. Retrieved from https://data.gov.sg/datasets/d_daf568968ab40dc81e7b08887a83c8fa/view  \n  \nSingapore Department of Statistics. (2024). Per Capita GDP In Chained (2015) Dollars, Annual (2025) [Dataset]. data.gov.sg. Retrieved August 30, 2025 from https://data.gov.sg/datasets/d_c43f61819c32009f2e86c29b0550e7fc/view  \n  \nSingapore Department of Statistics. (2023). Indicators On Population, Annual (2025) [Dataset]. data.gov.sg. Retrieved August 30, 2025 from https://data.gov.sg/datasets/d_3d227e5d9fdec73f3bcadce671c333a6/view  \n  \nEnvcares. (2025). Plastics wastes in Singapore. https://envcares.com.sg/plastics-wastes-in-singapore/'
-# st.info(db_citations)
+st.write('TODO: Describe how the data is obtained...')
 df = pd.read_csv('SG_Plastic_Waste_GDP_Population_Dataset.csv')
 df
 
 
 # DATA VISUALIZATION
-st.write('Describe the independent and dependent variables...')
+st.write('TODO: Describe the independent and dependent variables...')
 col1, col2 = st.columns(2)
 with col1:
-  st.header('**Total Population**')
+  # st.header('**Total SG Population**')
+  st.write('**Total SG Population against Year**')
   st.bar_chart(data=df, x='Year', y=independent_variables[0], color=dependent_variable[0])
 with col2:
-  st.header('**GDP Per Capita**')
+  # st.header('**SG GDP Per Capita**')
+  st.write('**SG GDP Per Capita against Year**')
   st.bar_chart(data=df, x='Year', y=independent_variables[1], color=dependent_variable[0])
-# with st.expander('Independent Variables'):
-#   X = df[independent_variables]
-#   X
-# with st.expander('Dependent Variable'):
-#   y = df[dependent_variable]
-#   y
-# with st.expander('Data Visualization'):
-#   st.write('**Total SG Population**')
-#   st.bar_chart(data=df, x='Year', y=independent_variables[0], color=dependent_variable[0])
-#   st.write('**SD GDP Per Capita**')
-#   st.bar_chart(data=df, x='Year', y=independent_variables[1], color=dependent_variable[0])
 
 
 # DATA PREPARATION
@@ -98,7 +87,7 @@ output_predict: np.ndarray = predict_linreg(input_df, model['beta'], model['mean
 st.header('Predicted Volume of Plastic Waste Disposed in Singapore')
 st.write('You have selected the following population and GDP per capita in Singapore:')
 input_display
-st.write('Describe the MSE, RMSE, and MAE, as well as why we chose these to evaluate the model...')
+st.write('TODO: Describe the MSE, RMSE, and MAE, as well as why we chose these to evaluate the model...')
 st.table(output_df)
 st.success(f'Prediction: {round(output_predict[0][0]):,} tonnes')
 
