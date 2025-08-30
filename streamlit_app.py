@@ -48,7 +48,7 @@ with col1:
 with col2:
   # st.header('**SG GDP Per Capita**')
   st.write('**SG GDP Per Capita**')
-  st.write("It shows the average economic output per person, adjusted for inflation using 2015 prices, and expressed in SGD, serving as an indicator of Singapore's yearly economic performance from 1960 to 2024. We expect that when the GDP per capita increases, Singapore is experiencing economic growth. Consumer wealth is expected to increase, allowing for increased expenditure on consumer goods. Plastics are heavily used in the production of many consumer goods. Hence, we expect the volume of plastic consumption and consequently plastic waste disposed to increase.")
+  st.write("It shows the average economic output per person, adjusted for inflation using 2015 prices, and expressed in SGD, serving as an indicator of Singapore's yearly economic performance from 1960 to 2024. As GDP per capita rises, economic growth is expected, boosting consumer wealth and spending on goods. Hence, we expect the volume of plastic consumption and consequently plastic waste disposed to increase.")
   st.bar_chart(data=df, x='Year', y=independent_variables[1], color=dependent_variable[0])
 
 
