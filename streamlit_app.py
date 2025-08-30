@@ -103,63 +103,7 @@ st.success(f'Prediction: {round(output_predict[0][0]):,} tonnes')
 
 
 st.header('Dataset Reference List')
-st.info(citation_links[0])
-st.info(citation_links[1])
-st.info(citation_links[2])
-st.info(citation_links[3])
-
-# with st.info():
-#   st.write('Citation link')
-#   copy_button(
-#     'Link 1',
-#     icon='st',  # default, use 'st' as alternative
-#     tooltip='Copy citation',  # defaults to 'Copy'
-#     copied_label='Copied!',  # defaults to 'Copied!'
-#     key='cite_link1',  # If omitted, a random key will be generated
-#   )
-# copy_button(
-#     'Link 1',
-#     icon='st',  # default, use 'st' as alternative
-#     tooltip='Copy citation',  # defaults to 'Copy'
-#     copied_label='Copied!',  # defaults to 'Copied!'
-#     key='cite_link1',  # If omitted, a random key will be generated
-# )
-# with st.container(border=False):
-#         st.write("This is an important message.")
-#         copy_button(
-#           'Link 1',
-#           icon='st',  # default, use 'st' as alternative
-#           tooltip='Copy citation',  # defaults to 'Copy'
-#           copied_label='Copied!',  # defaults to 'Copied!'
-#           key='cite_link1'  # If omitted, a random key will be generated
-#         )
-#         # if st.button("Perform Action"):
-#         #     st.write("Action performed!")
-
-# col3, col4 = st.columns([3, 1]) # Adjust column ratios as needed
-
-# with col3:
-#     st.info("This is an important message.")
-# with col4:
-#     copy_button('Link 1', icon='st', tooltip='Copy citation', copied_label='Copied!', key='cite_link1')
-
-# css = """
-# <style>
-# .st-key-my-blue-container {
-#     background-color: lightblue;
-#     border-radius: 10px;
-#     padding: 20px;
-# }
-# </style>
-# """
-
-# # Inject the CSS into the Streamlit app
-# st.markdown(css, unsafe_allow_html=True)
-
-# # Create the container with the specified key
-# with st.container(key="my_blue_container"):
-#     st.write("This container has a light blue background!")
-#     st.button("Click me")
-
-# st.write("This is outside the colored container.")
 st.code(citation_links[0], language="None", wrap_lines=True)
+st.code(citation_links[1], language="None", wrap_lines=True)
+st.code(citation_links[2], language="None", wrap_lines=True)
+st.code(citation_links[3], language="None", wrap_lines=True)
