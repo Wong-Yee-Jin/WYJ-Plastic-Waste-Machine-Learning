@@ -79,7 +79,7 @@ mse: float = mean_squared_error(target, pred)
 rmse = np.sqrt(mse)
 abs_errors = np.abs(target - pred)
 mean_abs_error = np.mean(abs_errors)
-output_data = {'Mean Squared Error (MSE)': f'{mse:.4f}', 'Root Mean Squared Error (RMSE)': f'{rmse:.4f}', 'Mean Absolute Error (MAE)': f'{mean_abs_error:.4f}'}
+output_data = {'Mean Squared Error (MSE)': f'{mse:,.4f}', 'Root Mean Squared Error (RMSE)': f'{rmse:.4f}', 'Mean Absolute Error (MAE)': f'{mean_abs_error:.4f}'}
 output_df = pd.DataFrame(output_data, index=[0])
 
 
