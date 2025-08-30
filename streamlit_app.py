@@ -48,10 +48,11 @@ with st.sidebar:
   sg_gdp = st.slider('Singapore GDP Per Capita', 30000, 1000000000, 500000)
   input_data = {'Total SG Population': sg_population, 'SG GDP Per Capita': sg_gdp}
   input_df = pd.DataFrame(input_data, index=[0])
+  input_display = pd.DataFrame({'Total SG Population': f'{sg_population:,}', 'SG GDP Per Capita': f'{sg_gdp:,}'}, index=[0])
 
 
 st.header('Selected Input Features')
-input_df
+input_display
 
 
 # PREPARE FEATURES & TARGET SETS
