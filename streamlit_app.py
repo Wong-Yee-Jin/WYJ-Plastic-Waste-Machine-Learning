@@ -58,8 +58,8 @@ with st.sidebar:
   input_display = pd.DataFrame({'Total SG Population': f'{sg_population:,}', 'SG GDP Per Capita': f'{sg_gdp:,}'}, index=[0])
 
 
-st.header('Selected Input Features')
-input_display
+# st.header('Selected Input Features')
+# input_display
 
 
 # PREPARE FEATURES & TARGET SETS
@@ -96,6 +96,8 @@ output_predict: np.ndarray = predict_linreg(input_df, model['beta'], model['mean
 
 
 st.header('Predicted Volume of Plastic Waste Disposed in Singapore')
+st.write('You have selected the following population and GDP per capita in Singapore:')
+input_display
 st.write('Describe the MSE, RMSE, and MAE, as well as why we chose these to evaluate the model...')
 st.table(output_df)
 st.success(f'Prediction: {round(output_predict[0][0]):,} tonnes')
