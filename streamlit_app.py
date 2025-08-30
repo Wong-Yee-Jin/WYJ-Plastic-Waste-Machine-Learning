@@ -108,7 +108,7 @@ st.info(citation_links[1])
 st.info(citation_links[2])
 st.info(citation_links[3])
 
-with st.info:
+with st.info():
   st.write('Citation link')
   copy_button(
     'Link 1',
