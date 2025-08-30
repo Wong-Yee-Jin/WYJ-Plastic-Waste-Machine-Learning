@@ -162,4 +162,4 @@ st.info(citation_links[3])
 #     st.button("Click me")
 
 # st.write("This is outside the colored container.")
-st.code(citation_links[0])
+st.code(citation_links[0], language="None", wrap_lines=True)
