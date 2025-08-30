@@ -25,7 +25,8 @@ df
 
 
 # DATA VISUALIZATION
-st.write('TODO: Describe the independent and dependent variables...')
+st.header('Independent and Dependent Variables')
+st.write('TODO: Describe the independent and dependent variables used...')
 col1, col2 = st.columns(2)
 with col1:
   # st.header('**Total SG Population**')
