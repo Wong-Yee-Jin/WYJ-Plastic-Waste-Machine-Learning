@@ -68,6 +68,7 @@ with st.sidebar:
 
 
 # PREPARE FEATURES & TARGET SETS
+df[dependent_variable[0]] = np.log(df[dependent_variable[0]]) # logarithm y variable
 df_features, df_target = get_features_targets(df, independent_variables, dependent_variable)
 df_features_train, df_features_test, df_target_train, df_target_test = split_data(df_features, df_target, 100, 0.2)
 array_features,_,_ = normalize_z(df_features.to_numpy())
@@ -83,11 +84,24 @@ beta, J_storage = gradient_descent_linreg(X, target, beta, alpha, iterations)
 pred: np.ndarray = predict_linreg(df_features, beta)
 target: np.ndarray = df_target.to_numpy()
 model, J_storage = build_model_linreg(df_features_train, df_target_train, beta, alpha, iterations)
-pred: np.ndarray = predict_linreg(df_features_test, model['beta'], model['means'], model['stds'])
+# pred: np.ndarray = predict_linreg(df_features_test, model['beta'], model['means'], model['stds'])
 
 
 # EVALUATE LINEAR REGRESSION MODEL
-target: np.ndarray = df_target_test.to_numpy()
+# target: np.ndarray = df_target_test.to_numpy()
+# mse: float = mean_squared_error(target, pred)
+# rmse = np.sqrt(mse)
+# abs_errors = np.abs(target - pred)
+# mean_abs_error = np.mean(abs_errors)
+# output_data = {'Mean Squared Error (MSE)': f'{mse:,.4f}', 'Root Mean Squared Error (RMSE)': f'{rmse:,.4f}', 'Mean Absolute Error (MAE)': f'{mean_abs_error:,.4f}'}
+# output_df = pd.DataFrame(output_data, index=[0])
+
+
+# BUILD + TEST + EVALUATE LINEAR REGRESSION MODEL (LOGARITHM)
+pred_log: np.ndarray = predict_linreg(df_features_test, model['beta'], model['means'], model['stds'])
+pred: np.ndarray = np.exp(pred_log)
+target_log: np.ndarray = df_target_test.to_numpy()
+target: np.ndarray = np.exp(target_log)
 mse: float = mean_squared_error(target, pred)
 rmse = np.sqrt(mse)
 abs_errors = np.abs(target - pred)
