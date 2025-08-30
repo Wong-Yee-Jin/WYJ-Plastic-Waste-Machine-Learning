@@ -91,3 +91,7 @@ st.header('Predicted Volume of Plastic Waste Disposed in Singapore')
 st.write('Describe the MSE, RMSE, and MAE, as well as why we chose these to evaluate the model...')
 st.table(output_df)
 st.success(f'Prediction: {round(output_predict[0][0])} tonnes')
+
+number = 1234567890.45
+formatted_number = f"{number:,}"
+st.write(f"Formatted number: {formatted_number}")
