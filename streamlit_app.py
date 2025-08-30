@@ -108,15 +108,15 @@ st.info(citation_links[1])
 st.info(citation_links[2])
 st.info(citation_links[3])
 
-with st.info():
-  st.write('Citation link')
-  copy_button(
-    'Link 1',
-    icon='st',  # default, use 'st' as alternative
-    tooltip='Copy citation',  # defaults to 'Copy'
-    copied_label='Copied!',  # defaults to 'Copied!'
-    key='cite_link1',  # If omitted, a random key will be generated
-  )
+# with st.info():
+#   st.write('Citation link')
+#   copy_button(
+#     'Link 1',
+#     icon='st',  # default, use 'st' as alternative
+#     tooltip='Copy citation',  # defaults to 'Copy'
+#     copied_label='Copied!',  # defaults to 'Copied!'
+#     key='cite_link1',  # If omitted, a random key will be generated
+#   )
 # copy_button(
 #     'Link 1',
 #     icon='st',  # default, use 'st' as alternative
@@ -135,3 +135,11 @@ with st.container(border=True):
         )
         # if st.button("Perform Action"):
         #     st.write("Action performed!")
+
+col3, col4 = st.columns([3, 1]) # Adjust column ratios as needed
+
+with col3:
+    st.info("This is an important message.")
+with col4:
+    if st.button("Click Me"):
+        st.write("Button clicked!")
