@@ -85,7 +85,7 @@ output_df = pd.DataFrame(output_data, index=[0])
 output_predict: np.ndarray = predict_linreg(input_df, model['beta'], model['means'], model['stds'])
 
 
-st.header('Predict Volume of Plastic Waste Disposed in Singapore')
+st.header('Predict the Volume of Plastic Waste Disposed in Singapore')
 st.write('You have selected the following population and GDP per capita in Singapore:')
 input_display
 st.write('TODO: Describe the MSE, RMSE, and MAE, as well as why we chose these to evaluate the model...')
