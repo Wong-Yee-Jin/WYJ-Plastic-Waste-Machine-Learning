@@ -17,7 +17,7 @@ st.info("Problem Statement: using **supervised learning** (Multiple Linear Regre
 # DATA EXTRACTION
 st.header('Data Extraction')
 st.write('Describe how the data is obtained...')
-db_citations = 'Reference List of datasets used  \nSingapore Department of Statistics. (2024). Waste Management And Overall Recycling Rates, Annual (2025) [Dataset]. data.gov.sg. Retrieved August 30, 2025 from https://data.gov.sg/datasets/d_daf568968ab40dc81e7b08887a83c8fa/view'
+db_citations = 'Dataset Reference List  \n  \nSingapore Department of Statistics. (2024). Waste Management And Overall Recycling Rates, Annual (2025) [Dataset]. data.gov.sg. Retrieved from https://data.gov.sg/datasets/d_daf568968ab40dc81e7b08887a83c8fa/view  \n  \nSingapore Department of Statistics. (2024). Per Capita GDP In Chained (2015) Dollars, Annual (2025) [Dataset]. data.gov.sg. Retrieved August 30, 2025 from https://data.gov.sg/datasets/d_c43f61819c32009f2e86c29b0550e7fc/view  \n  \nSingapore Department of Statistics. (2023). Indicators On Population, Annual (2025) [Dataset]. data.gov.sg. Retrieved August 30, 2025 from https://data.gov.sg/datasets/d_3d227e5d9fdec73f3bcadce671c333a6/view  \n  \nEnvcares. (2025). Plastics wastes in Singapore. https://envcares.com.sg/plastics-wastes-in-singapore/'
 st.info(db_citations)
 df = pd.read_csv('SG_Plastic_Waste_GDP_Population_Dataset.csv')
 df
