@@ -96,3 +96,12 @@ st.header('Predicted Volume of Plastic Waste Disposed in Singapore')
 st.write('Describe the MSE, RMSE, and MAE, as well as why we chose these to evaluate the model...')
 st.table(output_df)
 st.success(f'Prediction: {round(output_predict[0][0]):,} tonnes')
+
+
+copy_button(
+    'Link 1',
+    icon='st',  # default, use 'st' as alternative
+    tooltip='Copy citation',  # defaults to 'Copy'
+    copied_label='Copied!',  # defaults to 'Copied!'
+    key='cite_link1',  # If omitted, a random key will be generated
+)
