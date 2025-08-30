@@ -110,8 +110,13 @@ st.success(f'Prediction: **{round(output_predict[0][0]):,} tonnes**')
 
 st.header('Discussion and Analysis of Results')
 st.write('Our objective was to predict Singapore’s future plastic waste generation, addressing critical issues such as land scarcity and rising consumption. Using machine learning allowed us to:')
-st.html('<ul>  \n  \n<li>Quantify the relationship between macroeconomic indicators (GDP and population) and waste generation trends.</li><li>Forecast future plastic waste levels, even with incomplete historical data, by training a regression model.</li><li>Support policy with evidence-based projections, aiding long-term planning and infrastructure decisions related to waste management</li>')
-st.write('  • Quantify the relationship between macroeconomic indicators (GDP and population) and waste generation trends.  \n  • Forecast future plastic waste levels, even with incomplete historical data, by training a regression model.')
+# st.html('<ul>  \n  \n<li>Quantify the relationship between macroeconomic indicators (GDP and population) and waste generation trends.</li><li>Forecast future plastic waste levels, even with incomplete historical data, by training a regression model.</li><li>Support policy with evidence-based projections, aiding long-term planning and infrastructure decisions related to waste management</li>')
+# st.write('  • Quantify the relationship between macroeconomic indicators (GDP and population) and waste generation trends.  \n  • Forecast future plastic waste levels, even with incomplete historical data, by training a regression model.')
+st.markdown("""
+- Quantify the relationship between macroeconomic indicators (GDP and population) and waste generation trends.
+- Forecast future plastic waste levels by training a regression model.
+- Support policy with evidence-based projections, aiding long-term planning and infrastructure decisions related to waste management.
+""")
 st.write('By evaluating the model using RMSE and MAE, we demonstrate that its predictions are sufficiently accurate to support key decisions on infrastructure, recycling capacity, and sustainability policy. While there is room for refinement, such as incorporating more variables or higher-resolution data—the current model already provides a meaningful, data-driven foundation for sustainable waste management planning.')
 
 
