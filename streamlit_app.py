@@ -90,4 +90,4 @@ output_predict: np.ndarray = predict_linreg(input_df, model['beta'], model['mean
 st.header('Predicted Volume of Plastic Waste Disposed in Singapore')
 st.write('Describe the MSE, RMSE, and MAE, as well as why we chose these to evaluate the model...')
 st.table(output_df)
-st.success(f'Prediction: {round(output_predict[0][0])}')
+st.success(f'Prediction: {round(output_predict[0][0])} tonnes')
