@@ -141,11 +141,11 @@ with col6:
     st.session_state['new state'] = 5
   if st.session_state['state'] != st.session_state['new state']:
     if st.session_state['state'] == 1 and st.session_state['new state'] == 2:
-      st.image("1_2.gif")
+      st.image("animation/1_2.gif")
     elif st.session_state['state'] == 1 and st.session_state['new state'] == 3:
-      st.image("1_3.gif")
+      st.image("animation/1_3.gif")
     else:
-      st.image("1_4.gif")
+      st.image("animation/1_4.gif")
     # elif st.session_state['state'] == 1 and st.session_state['new state'] == 4:
     #   st.image("1_4.gif")
     st.session_state['state'] = st.session_state['new state']
