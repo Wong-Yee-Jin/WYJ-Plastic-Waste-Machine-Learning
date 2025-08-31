@@ -44,11 +44,11 @@ col3, col4 = st.columns(2)
 with col1:
   st.write('**Total SG Population**')
   st.write('It shows how the total population size changes from 1950 to 2024. When the population size increases, the total amount of consumer goods consumed in Singapore is expected to increases. Given that, the volume of plastic consumption and consequently plastic waste disposed should increase as well.')
-with col3:
-  st.bar_chart(data=df, x='Year', y=independent_variables[0], color=dependent_variable[0])
 with col2:
   st.write('**SG GDP Per Capita**')
   st.write("It shows Singapore's average economic output per person, adjusted for inflation to 2015 prices in SGD, as an indicator of yearly economic performance from 1960 to 2024. As GDP per capita rises, economic growth is expected, boosting consumer wealth and spending on goods. Hence, the volume of plastic consumption and consequently plastic waste disposed is expected to increase.")
+with col3:
+  st.bar_chart(data=df, x='Year', y=independent_variables[0], color=dependent_variable[0])
 with col4:
   st.bar_chart(data=df, x='Year', y=independent_variables[1], color=dependent_variable[0])
 
