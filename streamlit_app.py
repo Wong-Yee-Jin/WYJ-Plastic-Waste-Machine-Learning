@@ -43,12 +43,12 @@ col1, col2 = st.columns(2)
 col3, col4 = st.columns(2)
 with col1:
   st.write('**Total SG Population**')
-  st.write('It shows how the total population size changes from 1950 to 2024. We expect that when the population size increases, the total amount of consumer goods consumed in Singapore increases. Given that, the volume of plastic consumption and consequently plastic waste disposed should increase as well.')
+  st.write('It shows how the total population size changes from 1950 to 2024. When the population size increases, the total amount of consumer goods consumed in Singapore is expected to increases. Given that, the volume of plastic consumption and consequently plastic waste disposed should increase as well.')
 with col3:
   st.bar_chart(data=df, x='Year', y=independent_variables[0], color=dependent_variable[0])
 with col2:
   st.write('**SG GDP Per Capita**')
-  st.write("It shows Singapore's average economic output per person, adjusted for inflation to 2015 prices in SGD, as an indicator of yearly economic performance from 1960 to 2024. As GDP per capita rises, economic growth is expected, boosting consumer wealth and spending on goods. Hence, we expect the volume of plastic consumption and consequently plastic waste disposed to increase.")
+  st.write("It shows Singapore's average economic output per person, adjusted for inflation to 2015 prices in SGD, as an indicator of yearly economic performance from 1960 to 2024. As GDP per capita rises, economic growth is expected, boosting consumer wealth and spending on goods. Hence, the volume of plastic consumption and consequently plastic waste disposed is expected to increase.")
 with col4:
   st.bar_chart(data=df, x='Year', y=independent_variables[1], color=dependent_variable[0])
 
@@ -130,7 +130,7 @@ st.markdown("""
 - Forecast future plastic waste levels by training a regression model.
 - Support policy with evidence-based projections, aiding long-term planning and infrastructure decisions related to waste management.
 """)
-st.write('By evaluating the model using RMSE and MAE, we demonstrate that its predictions are sufficiently accurate to support key decisions on infrastructure, recycling capacity, and sustainability policy. While there is room for refinement, such as incorporating more variables or higher-resolution data, the current model already provides a meaningful, data-driven foundation for sustainable waste management planning.')
+st.write('By evaluating the model using RMSE and MAE, its predictions demonstrate that they are sufficiently accurate to support key decisions on infrastructure, recycling capacity, and sustainability policy. While there is room for refinement such as incorporating more variables or higher-resolution data, the current model already provides a meaningful, data-driven foundation for sustainable waste management planning.')
 
 
 st.header('Dataset Reference List')
