@@ -17,6 +17,12 @@ st.title(':recycle: Singapore Plastic Waste Disposed Machine Learning')
 st.info("Problem Statement: using **supervised learning** (Multiple Linear Regression), how might we **predict the volume of plastic waste disposed in Singapore** based on population size and GDP per capita to aid the Singapore Government's decision-making to promote sustainable growth and effective waste management?")
 
 
+if 'state' not in st.session_state or st.session_state['state'] is None:
+  st.session_state['state'] = 1
+if 'new state' not in st.session_state:
+  st.session_state['new state'] = 1
+  
+
 # DATA EXTRACTION
 st.header('Data Extraction')
 st.write('Three datasets have been considered for this machine learning project.')
@@ -127,10 +133,6 @@ with col5:
   st.write(f"st.session_state['state'] = {st.session_state['state']}")
   st.write(f"st.session_state['new state'] = {st.session_state['new state']}")
 with col6:
-  if 'state' not in st.session_state or st.session_state['state'] is None:
-    st.session_state['state'] = 1
-  if 'new state' not in st.session_state:
-    st.session_state['new state'] = 1
   if prediction_val < 88890:
     st.session_state['new state'] = 1
   elif 88890 <= prediction_val <= 2101149715:
