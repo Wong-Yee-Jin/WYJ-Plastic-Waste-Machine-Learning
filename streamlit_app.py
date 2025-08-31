@@ -118,7 +118,7 @@ st.header('Predict the Volume of Plastic Waste Disposed in Singapore')
 st.write('You have selected the following population and GDP per capita in Singapore:')
 input_display
 st.write('Root Mean Squared Error (RMSE) represents the average magnitude of the error between the predicted and actual values, with greater weight given to larger errors. In the context of national-level policy, such a margin of error is considered acceptable due to the scale of the data involved.')
-st.write('Mean Absolute Error (MAE) reflects the average absolute difference between predicted and actual values. An error of around 40,000 tonnes indicates that the model produces reasonably close estimates across the dataset.')
+st.write('Mean Absolute Error (MAE) reflects the average absolute difference between predicted and actual values. An error of around 70,000 tonnes indicates that the model produces reasonably close estimates across the dataset.')
 st.table(output_df)
 st.success(f'Prediction: **{round(output_predict[0][0]):,} tonnes**')
 
