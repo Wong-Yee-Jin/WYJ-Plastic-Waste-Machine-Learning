@@ -129,7 +129,7 @@ col5, col6 = st.columns(2)
 with col5:
   st.write('')
   st.write('')
-  st.write('**You have selected the following population and GDP per capita in Singapore:**')
+  st.write('**[Activity :wave:] You have selected the following population and GDP per capita in Singapore:**')
   input_display
   st.success(f'Prediction: **{prediction_val:,} tonnes**')
 with col6:
