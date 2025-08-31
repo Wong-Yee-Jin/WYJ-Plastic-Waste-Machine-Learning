@@ -12,7 +12,7 @@ citation_links = ['Singapore Department of Statistics. (2024). Waste Management 
                  'Envcares. (2025). Plastics wastes in Singapore. https://envcares.com.sg/plastics-wastes-in-singapore/']
 
 
-st.set_page_config(layout="wide")
+st.set_page_config(page_title="SG Plastic Waste Disposed", page_icon=":recycle:", layout="wide")
 st.title('♻ Singapore Plastic Waste Disposed Machine Learning')
 st.info("Problem Statement: using **supervised learning** (Multiple Linear Regression), how might we **predict the volume of plastic waste disposed in Singapore** based on population size and GDP per capita to aid the Singapore Government's decision-making to promote sustainable growth and effective waste management?")
 
