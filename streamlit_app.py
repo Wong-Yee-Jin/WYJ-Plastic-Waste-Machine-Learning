@@ -130,29 +130,23 @@ with col5:
   st.write('You have selected the following population and GDP per capita in Singapore:')
   input_display
   st.success(f'Prediction: **{prediction_val:,} tonnes**')
-  st.write(f"st.session_state['state'] = {st.session_state['state']}")
-  st.write(f"st.session_state['new state'] = {st.session_state['new state']}")
 with col6:
   if prediction_val < 88890:
     st.session_state['new state'] = 1
-  elif 88890 <= prediction_val <= 2101149715:
+  elif 88890 <= prediction_val <= 2000000000:
     st.session_state['new state'] = 2
-  elif 2101149716 <= prediction_val <= 4202210548:
+  elif 2000000000 <= prediction_val <= 4000000000:
     st.session_state['new state'] = 3
-  elif 4202210549 <= prediction_val <= 6303271382:
+  elif 4000000000 <= prediction_val <= 6000000000:
     st.session_state['new state'] = 4
-  elif prediction_val > 6303271382:
+  elif prediction_val > 6000000000:
     st.session_state['new state'] = 5
   if st.session_state['state'] != st.session_state['new state']:
-    if st.session_state['state'] == 1 and st.session_state['new state'] == 2:
-      st.image("animation/1_2.gif")
-    elif st.session_state['state'] == 1 and st.session_state['new state'] == 3:
-      st.image("animation/1_3.gif")
-    else:
-      st.image("animation/1_4.gif")
-    # elif st.session_state['state'] == 1 and st.session_state['new state'] == 4:
-    #   st.image("1_4.gif")
-    st.session_state['state'] = st.session_state['new state']
+    file_path = f"animation/{st.session_state['state']}_{st.session_state['new state']}.gif"
+  else:
+    file_path = f"animation/{st.session_state['new state']}.png"
+  st.image(file_path)
+  st.session_state['state'] = st.session_state['new state']
 
 
 st.header('Discussion and Analysis of Results')
