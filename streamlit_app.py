@@ -112,15 +112,43 @@ output_df = pd.DataFrame(output_data, index=[0])
 
 # PREDICT USING INPUT FEATURES FROM USER
 output_predict: np.ndarray = predict_linreg(input_df, model['beta'], model['means'], model['stds'])
+prediction_val = round(output_predict[0][0])
 
 
 st.header('Predict the Volume of Plastic Waste Disposed in Singapore')
-st.write('You have selected the following population and GDP per capita in Singapore:')
-input_display
 st.write('Root Mean Squared Error (RMSE) represents the average magnitude of the error between the predicted and actual values, with greater weight given to larger errors. In the context of national-level policy, such a margin of error is considered acceptable due to the scale of the data involved.')
 st.write('Mean Absolute Error (MAE) reflects the average absolute difference between predicted and actual values. An error of around 70,000 tonnes indicates that the model produces reasonably close estimates across the dataset.')
 st.table(output_df)
-st.success(f'Prediction: **{round(output_predict[0][0]):,} tonnes**')
+col5, col6 = st.columns(2)
+with col5:
+  st.write('You have selected the following population and GDP per capita in Singapore:')
+  input_display
+  st.success(f'Prediction: **{prediction_val:,} tonnes**')
+with col6:
+  if 'state' not in st.session_state or st.session_state['state'] is None:
+    st.session_state['state'] = 1
+  if 'new state' not in st.session_state:
+    st.session_state['new state'] = 1
+  if prediction_val < 88890:
+    st.session_state['new state'] = 1
+  elif 88890 <= prediction_val <= 2101149715:
+    st.session_state['new state'] = 2
+  elif 2101149716 <= prediction_val <= 4202210548:
+    st.session_state['new state'] = 3
+  elif 4202210549 <= prediction_val <= 6303271382:
+    st.session_state['new state'] = 4
+  elif prediction_val > 6303271382:
+    st.session_state['new state'] = 5
+  if st.session_state['state'] != st.session_state['new state']:
+    if st.session_state['state'] == 1 and st.session_state['new state'] == 2:
+      st.image("1_2.gif")
+    elif st.session_state['state'] == 1 and st.session_state['new state'] == 3:
+      st.image("1_3.gif")
+    else:
+      st.image("1_4.gif")
+    # elif st.session_state['state'] == 1 and st.session_state['new state'] == 4:
+    #   st.image("1_4.gif")
+    st.session_state['state'] = st.session_state['new state']
 
 
 st.header('Discussion and Analysis of Results')
