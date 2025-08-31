@@ -124,6 +124,8 @@ with col5:
   st.write('You have selected the following population and GDP per capita in Singapore:')
   input_display
   st.success(f'Prediction: **{prediction_val:,} tonnes**')
+  st.write(f"st.session_state['state'] = {st.session_state['state']}")
+  st.write(f"st.session_state['new state'] = {st.session_state['new state']}")
 with col6:
   if 'state' not in st.session_state or st.session_state['state'] is None:
     st.session_state['state'] = 1
