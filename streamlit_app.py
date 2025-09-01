@@ -69,8 +69,8 @@ with col5:
   st.write('')
   sg_population = st.slider('Singapore Population', 3000000, 1000000000, 5000000)
   sg_gdp = st.slider('Singapore GDP Per Capita', 30000, 1000000000, 500000)
-  input_display = pd.DataFrame({'Total SG Population': f'{sg_population:,}', 'SG GDP Per Capita': f'{sg_gdp:,}'}, index=[0])
-  input_display
+  input_display = pd.DataFrame({'Singapore Population': f'{sg_population:,}', 'Singapore GDP Per Capita': f'{sg_gdp:,}'}, index=[0])
+  st.table(input_display)
   prediction_val, output_df = predict_plastic_waste(df, sg_population, sg_gdp, independent_variables, dependent_variable)
   prediction_msg = f'Predicted Volume of Plastic Waste Disposed: **{prediction_val:,} tonnes**'
   st.write('')
