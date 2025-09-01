@@ -30,6 +30,16 @@ In Singapore, the waste generated yearly is distributed across two major pathway
   - The recycling bins are located at the carpark downstairs, making it bothersome to bring down any rubbish she wishes to recycle. On the other hand, simply throwing them into the common refuse chute on her floor saves time and energy.
   - The packaging of e-commerce parcels vary in material and form across different stores, as well as often containing a mix of materials such as both plastic and paper. This makes sorting the rubbish based on material time-consuming hence she mostly bothers to recycle those single-material packaging, throwing away the rest.
 
+**User 2: Pauline**
+- Age: 41
+- Occupation: Homemaker
+- Location: Woodlands
+- Housing: HDB
+- About: She is married with two young children. She takes care of the household, maintaining its cleanliness. She goes grocery shopping at least 2 to 3 times a week, purchasing various household items such as cooking and cleaning supplies. To entertain her children, she also frequents toy stores, buying whatever interests her children.
+- Pain Points
+  - She finds having to bring along her own reusable bag to the supermarket an inconvenience. Given that she often buys a large amount of groceries each time, it is rather inconvenient to bring multiple reusable bags and she would just rather pay the plastic carrier fees.
+  - As her children grows up and their preference in toys continually change, she clears the old toys once in awhile. She wishes to donate the old toys to a recycling center but such recycling  centers can be far from her house. Donation drives are also not particularly frequent so she just throws out the toys instead.
+
 ## 💻 Dataset Reference List
 Singapore Department of Statistics. (2024). Waste Management And Overall Recycling Rates, Annual (2025) [Dataset]. data.gov.sg. Retrieved from https://data.gov.sg/datasets/d_daf568968ab40dc81e7b08887a83c8fa/view
 
