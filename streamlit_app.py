@@ -60,6 +60,8 @@ st.header('Predict the Volume of Plastic Waste Disposed in Singapore')
 col5, col6 = st.columns(2)
 with col5:
   st.write('**[Activity :wave:] Select the following population and GDP per capita in Singapore:**')
+  st.write('')
+  st.write('')
   sg_population = st.slider('Singapore Population', 3000000, 1000000000, 5000000)
   sg_gdp = st.slider('Singapore GDP Per Capita', 30000, 1000000000, 500000)
   input_display = pd.DataFrame({'Total SG Population': f'{sg_population:,}', 'SG GDP Per Capita': f'{sg_gdp:,}'}, index=[0])
@@ -91,6 +93,8 @@ with col6:
     file_path = f"animation/{st.session_state['new state']}.png"
   st.image(file_path)
   st.session_state['state'] = st.session_state['new state']
+st.write('')
+st.write('')
 st.write('Root Mean Squared Error (RMSE) represents the average magnitude of the error between the predicted and actual values, with greater weight given to larger errors. In the context of national-level policy, such a margin of error is considered acceptable due to the scale of the data involved.')
 st.write('Mean Absolute Error (MAE) reflects the average absolute difference between predicted and actual values. An error of around 70,000 tonnes indicates that the model produces reasonably close estimates across the dataset.')
 st.table(output_df)
