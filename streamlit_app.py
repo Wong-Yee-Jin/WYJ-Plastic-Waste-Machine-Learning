@@ -10,13 +10,14 @@ citation_links = ['Singapore Department of Statistics. (2024). Waste Management 
                  'Singapore Department of Statistics. (2024). Per Capita GDP In Chained (2015) Dollars, Annual (2025) [Dataset]. data.gov.sg. Retrieved from https://data.gov.sg/datasets/d_c43f61819c32009f2e86c29b0550e7fc/view',
                  'Singapore Department of Statistics. (2023). Indicators On Population, Annual (2025) [Dataset]. data.gov.sg. Retrieved from https://data.gov.sg/datasets/d_3d227e5d9fdec73f3bcadce671c333a6/view',
                  'Envcares. (2025). Plastics wastes in Singapore. https://envcares.com.sg/plastics-wastes-in-singapore/']
+df = pd.read_csv('SG_Plastic_Waste_GDP_Population_Dataset.csv')
 
 
-def predict_plastic_waste(sg_population, sg_gdp, indep_variables, dep_variable):
+def predict_plastic_waste(df_ref, sg_population, sg_gdp, indep_variables, dep_variable):
   # PREPARE FEATURES & TARGET SETS
   input_data = {'Total SG Population': sg_population, 'SG GDP Per Capita': sg_gdp}
   input_df = pd.DataFrame(input_data, index=[0])
-  df_features, df_target = get_features_targets(df, indep_variables, dep_variable)
+  df_features, df_target = get_features_targets(df_ref, indep_variables, dep_variable)
   df_features_train, df_features_test, df_target_train, df_target_test = split_data(df_features, df_target, 100, 0.2)
   array_features,_,_ = normalize_z(df_features.to_numpy())
   X: np.ndarray = prepare_feature(array_features)
@@ -56,9 +57,6 @@ if 'new state' not in st.session_state:
 
 
 st.header('Predict the Volume of Plastic Waste Disposed in Singapore')
-# st.write('Root Mean Squared Error (RMSE) represents the average magnitude of the error between the predicted and actual values, with greater weight given to larger errors. In the context of national-level policy, such a margin of error is considered acceptable due to the scale of the data involved.')
-# st.write('Mean Absolute Error (MAE) reflects the average absolute difference between predicted and actual values. An error of around 70,000 tonnes indicates that the model produces reasonably close estimates across the dataset.')
-# st.table(output_df)
 col5, col6 = st.columns(2)
 with col5:
   st.write('**[Activity :wave:] Select the following population and GDP per capita in Singapore:**')
@@ -66,7 +64,7 @@ with col5:
   sg_gdp = st.slider('Singapore GDP Per Capita', 30000, 1000000000, 500000)
   input_display = pd.DataFrame({'Total SG Population': f'{sg_population:,}', 'SG GDP Per Capita': f'{sg_gdp:,}'}, index=[0])
   input_display
-  prediction_val, output_df = predict_plastic_waste(sg_population, sg_gdp, independent_variables, dependent_variable)
+  prediction_val, output_df = predict_plastic_waste(df, sg_population, sg_gdp, independent_variables, dependent_variable)
   prediction_msg = f'Predicted Volume of Plastic Waste Disposed in Singapore: **{prediction_val:,} tonnes**'
   if prediction_val < 2000000000:
     st.success(prediction_msg)
@@ -111,7 +109,7 @@ with st.container(border=True):
   st.write('**3. Indicators On Population Annual**')
   st.write("This dataset details the various characteristics of the country's population such as total population size and its breakdown by type of citizenship as well as population growth rate and density and gender ratio, from 1950 to 2024.")
   st.write('Aligning with the years found in the first dataset, the data in the column "Total Population" from 1996 to 2024 was selected.')
-df = pd.read_csv('SG_Plastic_Waste_GDP_Population_Dataset.csv')
+# df = pd.read_csv('SG_Plastic_Waste_GDP_Population_Dataset.csv')
 df
 
 
