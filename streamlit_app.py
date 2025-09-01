@@ -62,11 +62,11 @@ with col4:
 # DATA PREPARATION
 with st.sidebar:
   st.header('Input Features')
-  sg_population = st.slider('Singapore Population', 3000000, 1000000000, 5000000)
-  sg_gdp = st.slider('Singapore GDP Per Capita', 30000, 1000000000, 500000)
-  input_data = {'Total SG Population': sg_population, 'SG GDP Per Capita': sg_gdp}
-  input_df = pd.DataFrame(input_data, index=[0])
-  input_display = pd.DataFrame({'Total SG Population': f'{sg_population:,}', 'SG GDP Per Capita': f'{sg_gdp:,}'}, index=[0])
+  # sg_population = st.slider('Singapore Population', 3000000, 1000000000, 5000000)
+  # sg_gdp = st.slider('Singapore GDP Per Capita', 30000, 1000000000, 500000)
+  # input_data = {'Total SG Population': sg_population, 'SG GDP Per Capita': sg_gdp}
+  # input_df = pd.DataFrame(input_data, index=[0])
+  # input_display = pd.DataFrame({'Total SG Population': f'{sg_population:,}', 'SG GDP Per Capita': f'{sg_gdp:,}'}, index=[0])
 
 
 # st.header('Selected Input Features')
@@ -127,15 +127,26 @@ st.write('Mean Absolute Error (MAE) reflects the average absolute difference bet
 st.table(output_df)
 col5, col6 = st.columns(2)
 with col5:
-  st.write('')
-  st.write('')
-  st.write('**[Activity :wave:] You have selected the following population and GDP per capita in Singapore:**')
+  # st.write('')
+  # st.write('')
+  st.write('**[Activity :wave:] Select the following population and GDP per capita in Singapore:**')
+  sg_population = st.slider('Singapore Population', 3000000, 1000000000, 5000000)
+  sg_gdp = st.slider('Singapore GDP Per Capita', 30000, 1000000000, 500000)
+  input_data = {'Total SG Population': sg_population, 'SG GDP Per Capita': sg_gdp}
+  input_df = pd.DataFrame(input_data, index=[0])
+  input_display = pd.DataFrame({'Total SG Population': f'{sg_population:,}', 'SG GDP Per Capita': f'{sg_gdp:,}'}, index=[0])
   input_display
-  st.success(f'Prediction: **{prediction_val:,} tonnes**')
+  prediction_msg = f'Predicted Volume of Plastic Waste Disposed in Singapore: **{prediction_val:,} tonnes**'
+  if prediction_val < 2000000000:
+    st.success(prediction_msg)
+  elif 2000000000 <= prediction_val <= 6000000000:
+    st.warning(prediction_msg)
+  elif prediction_val > 6000000000:
+    st.error(prediction_msg)
 with col6:
-  if prediction_val < 88890:
+  if prediction_val < 1000000000:
     st.session_state['new state'] = 1
-  elif 88890 <= prediction_val <= 2000000000:
+  elif 1000000000 <= prediction_val <= 2000000000:
     st.session_state['new state'] = 2
   elif 2000000000 <= prediction_val <= 4000000000:
     st.session_state['new state'] = 3
