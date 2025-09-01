@@ -65,7 +65,9 @@ with col5:
   input_display = pd.DataFrame({'Total SG Population': f'{sg_population:,}', 'SG GDP Per Capita': f'{sg_gdp:,}'}, index=[0])
   input_display
   prediction_val, output_df = predict_plastic_waste(df, sg_population, sg_gdp, independent_variables, dependent_variable)
-  prediction_msg = f'Predicted Volume of Plastic Waste Disposed in Singapore: **{prediction_val:,} tonnes**'
+  prediction_msg = f'Predicted Volume of Plastic Waste Disposed: **{prediction_val:,} tonnes**'
+  st.write('')
+  st.write('')
   if prediction_val < 2000000000:
     st.success(prediction_msg)
   elif 2000000000 <= prediction_val <= 6000000000:
