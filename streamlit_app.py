@@ -14,14 +14,14 @@ df = pd.read_csv('SG_Plastic_Waste_GDP_Population_Dataset.csv')
 
 
 def predict_plastic_waste(df_ref, sg_population, sg_gdp, indep_variables, dep_variable):
-  # PREPARE FEATURES & TARGET SETS
+  # PART I: PREPARE FEATURES & TARGET SETS
   input_data = {'Total SG Population': sg_population, 'SG GDP Per Capita': sg_gdp}
   input_df = pd.DataFrame(input_data, index=[0])
   df_features, df_target = get_features_targets(df_ref, indep_variables, dep_variable)
   df_features_train, df_features_test, df_target_train, df_target_test = split_data(df_features, df_target, 100, 0.2)
   array_features,_,_ = normalize_z(df_features.to_numpy())
   X: np.ndarray = prepare_feature(array_features)
-  # BUILD & TEST LINEAR REGRESSION MODEL
+  # PART II: BUILD & TEST LINEAR REGRESSION MODEL
   target: np.ndarray = df_target.to_numpy()
   iterations: int = 1500
   alpha: float = 0.01
@@ -31,7 +31,7 @@ def predict_plastic_waste(df_ref, sg_population, sg_gdp, indep_variables, dep_va
   target: np.ndarray = df_target.to_numpy()
   model, J_storage = build_model_linreg(df_features_train, df_target_train, beta, alpha, iterations)
   pred: np.ndarray = predict_linreg(df_features_test, model['beta'], model['means'], model['stds'])
-  # EVALUATE LINEAR REGRESSION MODEL
+  # PART III: EVALUATE LINEAR REGRESSION MODEL
   target: np.ndarray = df_target_test.to_numpy()
   mse: float = mean_squared_error(target, pred)
   rmse = np.sqrt(mse)
@@ -39,23 +39,29 @@ def predict_plastic_waste(df_ref, sg_population, sg_gdp, indep_variables, dep_va
   mean_abs_error = np.mean(abs_errors)
   output_data = {'Mean Squared Error (MSE)': f'{mse:,.4f}', 'Root Mean Squared Error (RMSE)': f'{rmse:,.4f}', 'Mean Absolute Error (MAE)': f'{mean_abs_error:,.4f}'}
   output_df = pd.DataFrame(output_data, index=[0])
-  # PREDICT USING INPUT FEATURES FROM USER
+  # PART IV: PREDICT USING INPUT FEATURES FROM USER
   output_predict: np.ndarray = predict_linreg(input_df, model['beta'], model['means'], model['stds'])
   prediction_val = round(output_predict[0][0])
   return prediction_val, output_df
 
 
+# TITLE
 st.set_page_config(page_title="SG Plastic Waste Disposed", page_icon=":recycle:", layout="wide")
 st.title(':recycle: Singapore Plastic Waste Disposed Machine Learning')
+
+
+# PROBLEM STATEMENT
 st.info("Problem Statement: using **supervised learning** (Multiple Linear Regression), how might we **predict the volume of plastic waste disposed in Singapore** based on population size and GDP per capita to aid the Singapore Government's decision-making to promote sustainable growth and effective waste management?")
 
 
+# SESSION STATE: INITIALIZATION
 if 'state' not in st.session_state or st.session_state['state'] is None:
   st.session_state['state'] = 1
 if 'new state' not in st.session_state:
   st.session_state['new state'] = 1
 
 
+# [ACTIVITY] PREDICT VOLUME OF PLASTIC WASTE DISPOSED IN SG
 st.header('[Activity :wave:] Predict the Volume of Plastic Waste Disposed in Singapore')
 col5, col6 = st.columns(2)
 with col5:
@@ -118,7 +124,7 @@ with st.container(border=True):
 df
 
 
-# DATA VISUALIZATION
+# INDEPENDENT & DEPENDENT VARIABLES + DATA VISUALIZATION
 st.header('Independent and Dependent Variables')
 st.write('Inferring from the problem statement, the dependent variable is "Plastic Waste Disposed in Singapore". As for the independent variables,')
 col1, col2 = st.columns(2)
@@ -135,9 +141,28 @@ with col4:
   st.bar_chart(data=df, x='Year', y=independent_variables[1], color=dependent_variable[0])
 
 
-# DATA PREPARATION
+# DISCUSSION & ANALYSIS OF RESULTS
+st.header('Discussion and Analysis of Results')
+st.write('The objective was to predict Singapore’s future plastic waste generation, addressing critical issues such as land scarcity and rising consumption. Using machine learning allowed:')
+st.markdown("""
+- Quantification of the relationship between macroeconomic indicators (GDP and population) and waste generation trends.
+- Forecasting of future plastic waste levels by training a regression model.
+- Policy development with evidence-based projections, aiding long-term planning and infrastructure decisions related to waste management.
+""")
+st.write('By evaluating the model using RMSE and MAE, its predictions demonstrate that they are sufficiently accurate to support key decisions on infrastructure, recycling capacity, and sustainability policy. While there is room for refinement such as incorporating more variables or higher-resolution data, the current model already provides a meaningful, data-driven foundation for sustainable waste management planning.')
+
+
+# DATASET REFERENCE LIST
+st.header('Dataset Reference List')
+st.code(citation_links[0], language="None", wrap_lines=True)
+st.code(citation_links[1], language="None", wrap_lines=True)
+st.code(citation_links[2], language="None", wrap_lines=True)
+st.code(citation_links[3], language="None", wrap_lines=True)
+
+
+# ABOUT THE AUTHOR
 with st.sidebar:
-  st.header('Who Made This Web App?')
+  st.header('About the Author')
   # sg_population = st.slider('Singapore Population', 3000000, 1000000000, 5000000)
   # sg_gdp = st.slider('Singapore GDP Per Capita', 30000, 1000000000, 500000)
   # input_data = {'Total SG Population': sg_population, 'SG GDP Per Capita': sg_gdp}
@@ -223,20 +248,3 @@ with st.sidebar:
 #     file_path = f"animation/{st.session_state['new state']}.png"
 #   st.image(file_path)
 #   st.session_state['state'] = st.session_state['new state']
-
-
-st.header('Discussion and Analysis of Results')
-st.write('The objective was to predict Singapore’s future plastic waste generation, addressing critical issues such as land scarcity and rising consumption. Using machine learning allowed:')
-st.markdown("""
-- Quantification of the relationship between macroeconomic indicators (GDP and population) and waste generation trends.
-- Forecasting of future plastic waste levels by training a regression model.
-- Policy development with evidence-based projections, aiding long-term planning and infrastructure decisions related to waste management.
-""")
-st.write('By evaluating the model using RMSE and MAE, its predictions demonstrate that they are sufficiently accurate to support key decisions on infrastructure, recycling capacity, and sustainability policy. While there is room for refinement such as incorporating more variables or higher-resolution data, the current model already provides a meaningful, data-driven foundation for sustainable waste management planning.')
-
-
-st.header('Dataset Reference List')
-st.code(citation_links[0], language="None", wrap_lines=True)
-st.code(citation_links[1], language="None", wrap_lines=True)
-st.code(citation_links[2], language="None", wrap_lines=True)
-st.code(citation_links[3], language="None", wrap_lines=True)
