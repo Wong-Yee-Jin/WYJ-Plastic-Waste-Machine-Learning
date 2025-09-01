@@ -41,7 +41,7 @@ def predict_plastic_waste(sg_population, sg_gdp, indep_variables, dep_variable):
   # PREDICT USING INPUT FEATURES FROM USER
   output_predict: np.ndarray = predict_linreg(input_df, model['beta'], model['means'], model['stds'])
   prediction_val = round(output_predict[0][0])
-  return prediction_val
+  return prediction_val, output_df
 
 
 st.set_page_config(page_title="SG Plastic Waste Disposed", page_icon=":recycle:", layout="wide")
@@ -56,6 +56,7 @@ if 'new state' not in st.session_state:
 
 
 st.header('Predict the Volume of Plastic Waste Disposed in Singapore')
+prediction_val, output_df = predict_plastic_waste(sg_population, sg_gdp, independent_variables, dependent_variable)
 st.write('Root Mean Squared Error (RMSE) represents the average magnitude of the error between the predicted and actual values, with greater weight given to larger errors. In the context of national-level policy, such a margin of error is considered acceptable due to the scale of the data involved.')
 st.write('Mean Absolute Error (MAE) reflects the average absolute difference between predicted and actual values. An error of around 70,000 tonnes indicates that the model produces reasonably close estimates across the dataset.')
 st.table(output_df)
@@ -66,7 +67,6 @@ with col5:
   sg_gdp = st.slider('Singapore GDP Per Capita', 30000, 1000000000, 500000)
   input_display = pd.DataFrame({'Total SG Population': f'{sg_population:,}', 'SG GDP Per Capita': f'{sg_gdp:,}'}, index=[0])
   input_display
-  prediction_val = predict_plastic_waste(sg_population, sg_gdp, independent_variables, dependent_variable)
   prediction_msg = f'Predicted Volume of Plastic Waste Disposed in Singapore: **{prediction_val:,} tonnes**'
   if prediction_val < 2000000000:
     st.success(prediction_msg)
