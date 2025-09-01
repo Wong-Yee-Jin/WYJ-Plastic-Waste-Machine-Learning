@@ -56,10 +56,10 @@ if 'new state' not in st.session_state:
   st.session_state['new state'] = 1
 
 
-st.header('Predict the Volume of Plastic Waste Disposed in Singapore')
+st.header('[Activity :wave:] Predict the Volume of Plastic Waste Disposed in Singapore')
 col5, col6 = st.columns(2)
 with col5:
-  st.write('**[Activity :wave:] Select the following population and GDP per capita in Singapore:**')
+  st.write('Select the following population and GDP per capita in Singapore:')
   st.write('')
   sg_population = st.slider('Singapore Population', 3000000, 1000000000, 5000000)
   sg_gdp = st.slider('Singapore GDP Per Capita', 30000, 1000000000, 500000)
@@ -94,8 +94,9 @@ with col6:
   st.session_state['state'] = st.session_state['new state']
 st.write('')
 st.write('')
-st.write('Root Mean Squared Error (RMSE) represents the average magnitude of the error between the predicted and actual values, with greater weight given to larger errors. In the context of national-level policy, such a margin of error is considered acceptable due to the scale of the data involved.')
-st.write('Mean Absolute Error (MAE) reflects the average absolute difference between predicted and actual values. An error of around 70,000 tonnes indicates that the model produces reasonably close estimates across the dataset.')
+st.write('The model has considered the following constraints while predicting based on your selection:')
+st.write('1. **Root Mean Squared Error (RMSE)** represents the average magnitude of the error between the predicted and actual values, with greater weight given to larger errors. In the context of national-level policy, such a margin of error is considered acceptable due to the scale of the data involved.')
+st.write('2. **Mean Absolute Error (MAE)** reflects the average absolute difference between predicted and actual values. An error of around 70,000 tonnes indicates that the model produces reasonably close estimates across the dataset.')
 st.table(output_df)
 
 
@@ -114,7 +115,6 @@ with st.container(border=True):
   st.write('**3. Indicators On Population Annual**')
   st.write("This dataset details the various characteristics of the country's population such as total population size and its breakdown by type of citizenship as well as population growth rate and density and gender ratio, from 1950 to 2024.")
   st.write('Aligning with the years found in the first dataset, the data in the column "Total Population" from 1996 to 2024 was selected.')
-# df = pd.read_csv('SG_Plastic_Waste_GDP_Population_Dataset.csv')
 df
 
 
@@ -137,7 +137,7 @@ with col4:
 
 # DATA PREPARATION
 with st.sidebar:
-  st.header('Input Features')
+  st.header('Who Made This Web App?')
   # sg_population = st.slider('Singapore Population', 3000000, 1000000000, 5000000)
   # sg_gdp = st.slider('Singapore GDP Per Capita', 30000, 1000000000, 500000)
   # input_data = {'Total SG Population': sg_population, 'SG GDP Per Capita': sg_gdp}
@@ -226,11 +226,11 @@ with st.sidebar:
 
 
 st.header('Discussion and Analysis of Results')
-st.write('Our objective was to predict Singapore’s future plastic waste generation, addressing critical issues such as land scarcity and rising consumption. Using machine learning allowed us to:')
+st.write('The objective was to predict Singapore’s future plastic waste generation, addressing critical issues such as land scarcity and rising consumption. Using machine learning allowed:')
 st.markdown("""
-- Quantify the relationship between macroeconomic indicators (GDP and population) and waste generation trends.
-- Forecast future plastic waste levels by training a regression model.
-- Support policy with evidence-based projections, aiding long-term planning and infrastructure decisions related to waste management.
+- Quantification of the relationship between macroeconomic indicators (GDP and population) and waste generation trends.
+- Forecasting of future plastic waste levels by training a regression model.
+- Policy development with evidence-based projections, aiding long-term planning and infrastructure decisions related to waste management.
 """)
 st.write('By evaluating the model using RMSE and MAE, its predictions demonstrate that they are sufficiently accurate to support key decisions on infrastructure, recycling capacity, and sustainability policy. While there is room for refinement such as incorporating more variables or higher-resolution data, the current model already provides a meaningful, data-driven foundation for sustainable waste management planning.')
 
