@@ -181,7 +181,8 @@ with st.sidebar:
   with col7:
     st.markdown("[![Title](https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg)](https://sg.linkedin.com/in/wong-yee-jin-26864023a)")
   with col8:
-    st.markdown("[![Title](https://images.icon-icons.com/2631/PNG/512/gmail_new_logo_icon_159149.png)](https://sg.linkedin.com/in/wong-yee-jin-26864023a)")
+    st.write("")
+    # st.markdown("[![Title](https://images.icon-icons.com/2631/PNG/512/gmail_new_logo_icon_159149.png)](https://sg.linkedin.com/in/wong-yee-jin-26864023a)")
   # st.markdown("[![Title](https://content.linkedin.com/content/dam/me/business/en-us/amp/xbu/linkedin-revised-brand-guidelines/in-logo/fg/brand-inlogo-logo-dsk-v01.jpg/jcr:content/renditions/brand-inlogo-logo-dsk-v01-2x.jpg)](https://sg.linkedin.com/in/wong-yee-jin-26864023a)")
   # sg_population = st.slider('Singapore Population', 3000000, 1000000000, 5000000)
   # sg_gdp = st.slider('Singapore GDP Per Capita', 30000, 1000000000, 500000)
