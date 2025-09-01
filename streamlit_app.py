@@ -98,12 +98,12 @@ with col6:
     file_path = f"animation/{st.session_state['new state']}.png"
   st.image(file_path)
   st.session_state['state'] = st.session_state['new state']
-st.write('')
-st.write('')
-st.write('The model has considered the following constraints while predicting based on your selection:')
-st.write('1. **Root Mean Squared Error (RMSE)** represents the average magnitude of the error between the predicted and actual values, with greater weight given to larger errors. In the context of national-level policy, such a margin of error is considered acceptable due to the scale of the data involved.')
-st.write('2. **Mean Absolute Error (MAE)** reflects the average absolute difference between predicted and actual values. An error of around 70,000 tonnes indicates that the model produces reasonably close estimates across the dataset.')
-st.table(output_df)
+# st.write('')
+# st.write('')
+# st.write('The model has considered the following constraints while predicting based on your selection:')
+# st.write('1. **Root Mean Squared Error (RMSE)** represents the average magnitude of the error between the predicted and actual values, with greater weight given to larger errors. In the context of national-level policy, such a margin of error is considered acceptable due to the scale of the data involved.')
+# st.write('2. **Mean Absolute Error (MAE)** reflects the average absolute difference between predicted and actual values. An error of around 70,000 tonnes indicates that the model produces reasonably close estimates across the dataset.')
+# st.table(output_df)
 
 
 # DATA EXTRACTION
@@ -139,6 +139,14 @@ with col3:
   st.bar_chart(data=df, x='Year', y=independent_variables[0], color=dependent_variable[0])
 with col4:
   st.bar_chart(data=df, x='Year', y=independent_variables[1], color=dependent_variable[0])
+
+
+# EVALUATION OF MODEL
+st.header('Evaluation of Model')
+st.write('The model has considered the following constraints while predicting based on your selection in the activity above:')
+st.write('1. **Root Mean Squared Error (RMSE)** represents the average magnitude of the error between the predicted and actual values, with greater weight given to larger errors. In the context of national-level policy, such a margin of error is considered acceptable due to the scale of the data involved.')
+st.write('2. **Mean Absolute Error (MAE)** reflects the average absolute difference between predicted and actual values. An error of around 70,000 tonnes indicates that the model produces reasonably close estimates across the dataset.')
+st.table(output_df)
 
 
 # DISCUSSION & ANALYSIS OF RESULTS
