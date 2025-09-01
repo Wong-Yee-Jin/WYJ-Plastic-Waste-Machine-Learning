@@ -87,4 +87,5 @@ Envcares. (2025). Plastics wastes in Singapore. https://envcares.com.sg/plastics
 -------------------------------------------
 
 
-**♥ Special thanks to my teammates for helping out in this little school project ♥**
+# **:hearts: Special Thanks**
+This project was built with the help of my teammates. Thank you and all the best to your studies at SUTD!
