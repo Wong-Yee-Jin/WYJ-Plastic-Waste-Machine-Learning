@@ -22,9 +22,9 @@ Problem Statement: How might we predict the annual volume of plastic waste dispo
 In Singapore, the waste generated yearly is distributed across two major pathways: recycling and disposal. Those sent for recycling are sorted through and processed to recover any materials that could be used again in manufacturing new products. The remaining waste is sent for disposal via incineration. Any incineration ash along with non-combustibles are then sent to the offshore Semakau Landfill. Among the various material types, the disposal of plastics is particularly worrying. Plastic waste is the biggest contributor to the total annual volume of waste disposed. Its low recycling rate means that majority of plastic waste produced in Singapore is incinerated. Semakau Landfill is projected to hit full capacity by 2035 and the high incineration rate of plastic waste only speeds up this timeline. As Singapore's sole landfill, once it is full, there will be no other immediate alternative for disposal of waste. Construction and maintenance of a new landfill will cost a copious amount of time and money. Additionally, the low recycling rate of plastic waste also results in the loss of valuable energy and raw materials that were used in manufacturing. Hence, it is crucial that the Singapore Government can accurately forecast the annual volume of plastic waste disposed. This can aid the planning for future waste management and material recovery infrastructure and allocation of land for any landfill space needed. Policymakers can also create more targeted and timely regulations and laws that encourage sustainability in product manufacturing among companies or recycling behaviour among consumers.
 
 
-## Potential Users (User Personas)
+## 😁 Potential Users (User Personas)
 
-**User 1: Jane**
+**🙋‍♀️ User 1: Jane**
 - Age: 26
 - Occupation: Accountant
 - Location: Toa Payoh
@@ -36,7 +36,7 @@ In Singapore, the waste generated yearly is distributed across two major pathway
   - The packaging of e-commerce parcels vary in material and form across different stores, as well as often containing a mix of materials such as both plastic and paper. This makes sorting the rubbish based on material time-consuming hence she mostly bothers to recycle those single-material packaging, throwing away the rest.
 
 
-**User 2: Pauline**
+**🙋‍♀️ User 2: Pauline**
 - Age: 41
 - Occupation: Homemaker
 - Location: Woodlands
@@ -47,7 +47,7 @@ In Singapore, the waste generated yearly is distributed across two major pathway
   - As her children grows up and their preference in toys continually change, she clears the old toys once in awhile. She wishes to donate the old toys to a recycling center but such recycling  centers can be far from her house. Donation drives are also not particularly frequent so she just throws out the toys instead.
 
 
-**User 3: Wayne**
+**🙋‍♂️ User 3: Wayne**
 - Age: 17
 - Occupation: Student
 - Location: Serangoon
@@ -58,7 +58,7 @@ In Singapore, the waste generated yearly is distributed across two major pathway
   - Whenever he is with his friends and they go to purchase bottled drinks, he always reminds them to recycle the bottle. However, many of his friends do not understand the importance of cleaning the bottle out before recycling and simply throws the contaminated bottles into the recycling bin.
 
 
-**User 4: Boon Heng**
+**🙋‍♂️ User 4: Boon Heng**
 - Age: 73
 - Occupation: Retiree
 - Location: Ang Mo Kio
@@ -83,4 +83,4 @@ Envcares. (2025). Plastics wastes in Singapore. https://envcares.com.sg/plastics
 -------------------------------------------
 
 
-**Special thanks to my teammates for helping out in this little school project :D**
+**♥ Special thanks to my teammates for helping out in this little school project ♥**
