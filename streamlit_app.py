@@ -98,12 +98,6 @@ with col6:
     file_path = f"animation/{st.session_state['new state']}.png"
   st.image(file_path)
   st.session_state['state'] = st.session_state['new state']
-# st.write('')
-# st.write('')
-# st.write('The model has considered the following constraints while predicting based on your selection:')
-# st.write('1. **Root Mean Squared Error (RMSE)** represents the average magnitude of the error between the predicted and actual values, with greater weight given to larger errors. In the context of national-level policy, such a margin of error is considered acceptable due to the scale of the data involved.')
-# st.write('2. **Mean Absolute Error (MAE)** reflects the average absolute difference between predicted and actual values. An error of around 70,000 tonnes indicates that the model produces reasonably close estimates across the dataset.')
-# st.table(output_df)
 
 
 # DATA EXTRACTION
@@ -171,6 +165,10 @@ st.code(citation_links[3], language="None", wrap_lines=True)
 # ABOUT THE AUTHOR
 with st.sidebar:
   st.header('About the Author')
+  st.write("Hello :wave:! Thank you for visiting this web app about plastic waste in Singapore!")
+  st.write("I am Wong Yee Jin, an undergraduate at the Singapore University of Technology and Design (SUTD). Pursuing a Bachelor of Engineering (Computer Science and Design), I always find ways to deepen my appreciation for technology and its positive impact towards humans and our quality of life.")
+  st.header('Connect with Me')
+  st.markdown("[![Title](https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg)](https://sg.linkedin.com/in/wong-yee-jin-26864023a)")
   # sg_population = st.slider('Singapore Population', 3000000, 1000000000, 5000000)
   # sg_gdp = st.slider('Singapore GDP Per Capita', 30000, 1000000000, 500000)
   # input_data = {'Total SG Population': sg_population, 'SG GDP Per Capita': sg_gdp}
