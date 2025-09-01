@@ -165,11 +165,12 @@ st.code(citation_links[3], language="None", wrap_lines=True)
 # ABOUT THE AUTHOR
 with st.sidebar:
   st.header('About the Author')
+  st.image("https://media.licdn.com/dms/image/v2/D5603AQGtcEL1pcSJdw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1710596628853?e=2147483647&v=beta&t=HBZZX8_DURQn4WHC-2z5lc4gSBYCUyt-Wfv_NzoK30s")
   st.write("Hello :wave:! Thank you for visiting this web app about plastic waste in Singapore!")
   st.write("I am Wong Yee Jin, an undergraduate at the Singapore University of Technology and Design (SUTD). Pursuing a Bachelor of Engineering (Computer Science and Design), I always find ways to deepen my appreciation for technology and its positive impact towards humans and our quality of life.")
   st.header('Connect with Me')
-  st.markdown("[![Title](https://content.linkedin.com/content/dam/me/business/en-us/amp/xbu/linkedin-revised-brand-guidelines/in-logo/fg/brand-inlogo-logo-dsk-v01.jpg/jcr:content/renditions/brand-inlogo-logo-dsk-v01-2x.jpg)](https://sg.linkedin.com/in/wong-yee-jin-26864023a)")
-  # st.markdown("[![Title](https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg)](https://sg.linkedin.com/in/wong-yee-jin-26864023a)")
+  st.markdown("[![Title](https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg)](https://sg.linkedin.com/in/wong-yee-jin-26864023a)")
+  # st.markdown("[![Title](https://content.linkedin.com/content/dam/me/business/en-us/amp/xbu/linkedin-revised-brand-guidelines/in-logo/fg/brand-inlogo-logo-dsk-v01.jpg/jcr:content/renditions/brand-inlogo-logo-dsk-v01-2x.jpg)](https://sg.linkedin.com/in/wong-yee-jin-26864023a)")
   # sg_population = st.slider('Singapore Population', 3000000, 1000000000, 5000000)
   # sg_gdp = st.slider('Singapore GDP Per Capita', 30000, 1000000000, 500000)
   # input_data = {'Total SG Population': sg_population, 'SG GDP Per Capita': sg_gdp}
