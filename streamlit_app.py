@@ -177,7 +177,7 @@ with st.sidebar:
   #   icon_image="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg"
   # )
   # st.markdown("[![Title](https://content.linkedin.com/content/dam/me/business/en-us/amp/xbu/linkedin-revised-brand-guidelines/linkedin-logo/fg/brandg-linkedinlogo-hero-logo-dsk-v01.png/jcr:content/renditions/brandg-linkedinlogo-hero-logo-dsk-v01-2x.png)](https://sg.linkedin.com/in/wong-yee-jin-26864023a)")
-  col7, col8 = st.columns(2)
+  col7, col8, col9 = st.columns(3)
   with col7:
     st.markdown(
         """
@@ -192,13 +192,15 @@ with st.sidebar:
   with col8:
     st.markdown(
         """
-        <a href="https://sg.linkedin.com/in/wong-yee-jin-26864023a" target="_blank">
+        <a href="mailto:victoriawong198@gmail.com" target="_blank">
             <img src="https://images.icon-icons.com/2631/PNG/512/gmail_new_logo_icon_159149.png" 
                  alt="Google Mail" width="30"/>
         </a>
         """,
         unsafe_allow_html=True
     )
+  with col9:
+    st.write("")
   # st.markdown("[![Title](https://images.icon-icons.com/2631/PNG/512/gmail_new_logo_icon_159149.png)](https://sg.linkedin.com/in/wong-yee-jin-26864023a)")
   # st.markdown("[![Title](https://content.linkedin.com/content/dam/me/business/en-us/amp/xbu/linkedin-revised-brand-guidelines/in-logo/fg/brand-inlogo-logo-dsk-v01.jpg/jcr:content/renditions/brand-inlogo-logo-dsk-v01-2x.jpg)](https://sg.linkedin.com/in/wong-yee-jin-26864023a)")
   # sg_population = st.slider('Singapore Population', 3000000, 1000000000, 5000000)
