@@ -62,7 +62,7 @@ if 'new state' not in st.session_state:
 
 
 # [ACTIVITY] PREDICT VOLUME OF PLASTIC WASTE DISPOSED IN SG
-st.header('[Activity :wave:] Predict the Volume of Plastic Waste Disposed in Singapore')
+st.header('[Activity :raised_hand_with_fingers_splayed:] Predict the Volume of Plastic Waste Disposed in Singapore')
 col5, col6 = st.columns(2)
 with col5:
   st.write('Select the following population and GDP per capita in Singapore:')
