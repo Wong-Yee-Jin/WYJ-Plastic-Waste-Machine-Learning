@@ -61,7 +61,6 @@ col5, col6 = st.columns(2)
 with col5:
   st.write('**[Activity :wave:] Select the following population and GDP per capita in Singapore:**')
   st.write('')
-  st.write('')
   sg_population = st.slider('Singapore Population', 3000000, 1000000000, 5000000)
   sg_gdp = st.slider('Singapore GDP Per Capita', 30000, 1000000000, 500000)
   input_display = pd.DataFrame({'Total SG Population': f'{sg_population:,}', 'SG GDP Per Capita': f'{sg_gdp:,}'}, index=[0])
