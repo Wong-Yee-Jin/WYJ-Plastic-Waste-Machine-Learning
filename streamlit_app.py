@@ -170,29 +170,44 @@ with st.sidebar:
   st.write("")
   st.write("I am Wong Yee Jin, an undergraduate at the Singapore University of Technology and Design (SUTD). Pursuing a Bachelor of Engineering (Computer Science and Design), I always find ways to deepen my appreciation for technology and its positive impact towards humans and our quality of life.")
   st.header('Connect with Me')
-  col7, col8, col9 = st.columns(3)
-  with col7:
-    st.markdown(
-        """
-        <a href="https://sg.linkedin.com/in/wong-yee-jin-26864023a" target="_blank">
+  st.markdown(
+    """
+    <div style="display: flex; justify-content: flex-start; align-items: center;">
+        <a href="https://sg.linkedin.com/in/wong-yee-jin" target="_blank">
             <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" 
-                 alt="LinkedIn" width="30"/>
+                 alt="LinkedIn" width="30" style="margin-right: 10px;"/>
         </a>
-        """,
-        unsafe_allow_html=True
-    )
-  with col8:
-    st.markdown(
-        """
         <a href="mailto:victoriawong198@gmail.com" target="_blank">
             <img src="https://images.icon-icons.com/2631/PNG/512/gmail_new_logo_icon_159149.png" 
-                 alt="Google Mail" width="30"/>
+                 alt="Google Mail" width="30" style="margin-right: 10px;"/>
         </a>
-        """,
-        unsafe_allow_html=True
-    )
-  with col9:
-    st.write("")
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+  # col7, col8, col9 = st.columns(3)
+  # with col7:
+  #   st.markdown(
+  #       """
+  #       <a href="https://sg.linkedin.com/in/wong-yee-jin" target="_blank">
+  #           <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" 
+  #                alt="LinkedIn" width="30"/>
+  #       </a>
+  #       """,
+  #       unsafe_allow_html=True
+  #   )
+  # with col8:
+  #   st.markdown(
+  #       """
+  #       <a href="mailto:victoriawong198@gmail.com" target="_blank">
+  #           <img src="https://images.icon-icons.com/2631/PNG/512/gmail_new_logo_icon_159149.png" 
+  #                alt="Google Mail" width="30"/>
+  #       </a>
+  #       """,
+  #       unsafe_allow_html=True
+  #   )
+  # with col9:
+  #   st.write("")
   # st.logo(
   #   "https://content.linkedin.com/content/dam/me/business/en-us/amp/xbu/linkedin-revised-brand-guidelines/linkedin-logo/fg/brandg-linkedinlogo-hero-logo-dsk-v01.png/jcr:content/renditions/brandg-linkedinlogo-hero-logo-dsk-v01-2x.png", 
   #   size="small", 
