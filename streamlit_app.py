@@ -165,7 +165,7 @@ st.code(citation_links[3], language="None", wrap_lines=True)
 # ABOUT THE AUTHOR
 with st.sidebar:
   st.header('About the Author')
-  st.image("https://media.licdn.com/dms/image/v2/D5603AQGtcEL1pcSJdw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1710596628853?e=2147483647&v=beta&t=HBZZX8_DURQn4WHC-2z5lc4gSBYCUyt-Wfv_NzoK30s")
+  st.image("https://media.licdn.com/dms/image/v2/D5603AQEnsCOqF6x0fQ/profile-displayphoto-scale_200_200/B56ZkLGZNWHMAc-/0/1756827851750?e=2147483647&v=beta&t=8-z45_8E24fvhBFasZVmWwZE0ROXgQFW0qps7bd6rC8")
   st.write("Hello :wave:! Thank you for visiting this web app about plastic waste in Singapore!")
   st.write("")
   st.write("I am Wong Yee Jin, an undergraduate at the Singapore University of Technology and Design (SUTD). Pursuing a Bachelor of Engineering (Computer Science and Design), I always find ways to deepen my appreciation for technology and its positive impact towards humans and our quality of life.")
